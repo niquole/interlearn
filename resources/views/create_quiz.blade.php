@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <homepage-component></homepage-component>
+    <create-quiz-component></create-quiz-component>
 @endsection

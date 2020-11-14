@@ -3,6 +3,6 @@
 
 @section('content')
 
-    <landing-page></landing-page>
+    <landing-component></landing-component>
 
 @endsection

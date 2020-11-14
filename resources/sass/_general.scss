@@ -2,16 +2,23 @@
 
 html {
   
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #131313;
-      font-family: 'Poppins', sans-serif;
-  
-      a {
-        text-decoration: none;
-        // color: yellow;
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #131313;
+    font-family: 'Poppins', sans-serif;
+    
+    a {
+      text-decoration: none;
+      // color: yellow;
+      img#logo {
+        height: 70px;
+        margin-left: 25vw;
       }
-
     }
+
   }
+  
+
+  
+}
