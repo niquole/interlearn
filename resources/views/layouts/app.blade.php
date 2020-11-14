@@ -49,16 +49,24 @@
                         @guest
                         @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Create') }}</a>
+                                    <a id="create" class="nav-link" href="{{ route('login') }}">                                    
+                                        <el-button type="warning" round plain>{{ __('Create') }}</el-button></a>
                                 </li>
                             @endif
                             
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            
+                                <li class="nav-item" >
+                                    <a id="login" class="nav-link"  href="{{ route('login') }}">
+                                   <el-button type="primary" round plain>{{ __('Login') }}</el-button></a>
                                 </li>
                             @endif
                         @else
+                        <li class="nav-item">
+                                    <a id="create" class="nav-link" href="{{ route('login') }}">                                    
+                                        <el-button type="warning" round plain>{{ __('Create') }}</el-button></a>
+                                </li>
+                                
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

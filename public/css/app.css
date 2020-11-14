@@ -10907,16 +10907,58 @@ a.text-dark:focus {
 html body {
   margin: 0;
   padding: 0;
+  color: #fff;
   background-color: #131313;
-  font-family: "Poppins", sans-serif;
 }
 
 html body a {
   text-decoration: none;
+  color: #599FA5;
+}
+
+html body a .nav-brand {
+  position: relative;
 }
 
 html body a img#logo {
-  height: 70px;
-  margin-left: 25vw;
+  width: 200px;
+  position: absolute;
+  top: 5px;
+  left: 45%;
+}
+
+html body li a .el-button--warning.is-plain {
+  position: absolute;
+  left: 5%;
+  background-color: transparent !important;
+  font-size: large;
+  border: 2px solid #FCBF49 !important;
+  color: #fff;
+}
+
+html body li a .el-button--warning.is-plain :hover {
+  color: #FCBF49 !important;
+}
+
+html body li a .el-button--primary.is-plain {
+  position: absolute;
+  right: 5%;
+  background-color: transparent !important;
+  font-size: large;
+  border: 2px solid #599FA5 !important;
+  color: #fff;
+}
+
+html body li a .el-button--primary.is-plain :hover {
+  color: #599FA5;
+}
+
+html body .navbar-expand-md .navbar-nav .nav-link {
+  margin-left: 30vw !important;
+}
+
+html body .card {
+  background-color: transparent !important;
+  margin: 0 auto !important;
 }
 

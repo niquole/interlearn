@@ -5,20 +5,70 @@ html {
   body {
     margin: 0;
     padding: 0;
+    color: #fff;
     background-color: #131313;
-    font-family: 'Poppins', sans-serif;
     
     a {
       text-decoration: none;
-      // color: yellow;
-      img#logo {
-        height: 70px;
-        margin-left: 25vw;
+      color: #599FA5 ;
+      
+      .nav-brand {
+        position: relative;
+        
       }
+      
+      
+      img#logo {
+        width: 200px;
+        position: absolute;
+        top: 5px;
+        left: 45%;
+        
+      }
+      
+      
+      
+    }
+    
+    li {
+      a {
+        .el-button--warning.is-plain {
+          position: absolute;
+          left: 5%;
+          background-color: transparent !important;
+          font-size: large;
+          border: 2px solid #FCBF49 !important;
+          color: #fff;
+          
+          :hover {
+            color: #FCBF49 !important;
+          }
+        }
+        
+        .el-button--primary.is-plain {
+          position: absolute;
+          right: 5%;
+          background-color: transparent !important;
+          font-size: large;
+          border: 2px solid #599FA5 !important;
+          color: #fff;
+          :hover {
+            color: #599FA5;
+            
+          }
+        }
+      } 
+    }
+    
+    
+    .navbar-expand-md .navbar-nav .nav-link {
+      margin-left: 30vw !important;
     }
 
+    .card {
+      background-color: transparent !important;
+      margin: 0 auto !important;
+    }
+    
   }
-  
-
-  
 }
