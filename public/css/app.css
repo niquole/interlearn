@@ -10962,3 +10962,52 @@ html body .card {
   margin: 0 auto !important;
 }
 
+.form-control {
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid #fff !important;
+  margin-top: 20px;
+  border-radius: 0 !important;
+}
+
+.card-body {
+  margin-top: 40%;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.forgot {
+  color: #fff !important;
+}
+
+.join {
+  font-size: 20px;
+  color: #FCBF49;
+}
+
+.join:hover {
+  font-size: 21px;
+  color: #FCBF49 !important;
+  text-decoration: underline;
+}
+
+.login-button {
+  color: #fff !important;
+  background-color: transparent !important;
+  border: 2px solid #599FA5 !important;
+}
+
+.login-button:hover {
+  background-color: #599FA5 !important;
+}
+
