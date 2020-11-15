@@ -1,0 +1,45 @@
+div {
+    .margin-top-container {
+        margin-top: 3%;
+    }
+
+    .margin-top-between {
+        margin-top: 1%;
+    }
+    .lesson-container{
+        position: relative;
+        border: 2px solid #599FA5;
+        border-right: 50px solid #599FA5;
+        width: 80%;
+        margin: 0 auto;
+        padding: 1.5% 0%;
+        padding-left: 1%;
+        border-radius: 20px;
+
+        #lesson-link {
+            position: absolute;
+            top: 7%;
+            right: -32px;
+            text-align: center;
+            
+        }
+    }
+
+    .quiz-container{
+        position: relative;
+        border: 2px solid #FCBF49;
+        border-right: 50px solid #FCBF49;
+        width: 80%;
+        margin: 0 auto;
+        padding: 1.5% 0%;
+        padding-left: 1%;
+        border-radius: 20px;
+
+        #quiz-link {
+            position: absolute;
+            top: 23%;
+            right: -32px;
+            text-align: center;
+        }
+    }
+}

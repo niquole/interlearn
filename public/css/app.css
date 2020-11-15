@@ -10913,7 +10913,11 @@ html body {
 
 html body a {
   text-decoration: none;
-  color: #599FA5;
+  color: #fff !important;
+}
+
+html body a :hover {
+  color: #fff !important;
 }
 
 html body a .nav-brand {
@@ -10927,30 +10931,33 @@ html body a img#logo {
   left: 45%;
 }
 
-html body li a .el-button--warning.is-plain {
+html body li a #create {
   position: absolute;
   left: 5%;
+  color: #fff !important;
   background-color: transparent !important;
-  font-size: large;
   border: 2px solid #FCBF49 !important;
-  color: #fff;
+  padding: 10px 30px;
+  border-radius: 20px;
 }
 
-html body li a .el-button--warning.is-plain :hover {
-  color: #FCBF49 !important;
+html body li a #create:hover {
+  background-color: #FCBF49 !important;
 }
 
-html body li a .el-button--primary.is-plain {
+html body li a #login-link {
   position: absolute;
   right: 5%;
   background-color: transparent !important;
   font-size: large;
   border: 2px solid #599FA5 !important;
+  padding: 10px 30px;
+  border-radius: 20px;
   color: #fff;
 }
 
-html body li a .el-button--primary.is-plain :hover {
-  color: #599FA5;
+html body li a #login-link:hover {
+  background-color: #599FA5 !important;
 }
 
 html body .navbar-expand-md .navbar-nav .nav-link {
@@ -10962,7 +10969,19 @@ html body .card {
   margin: 0 auto !important;
 }
 
-.form-control {
+html body #current-user {
+  color: #fff !important;
+}
+
+html body #dropdown-arrow a {
+  color: #FCBF49 !important;
+}
+
+html body #logout {
+  color: black !important;
+}
+
+.forms .form-control {
   background-color: transparent !important;
   border: none !important;
   border-bottom: 1px solid #fff !important;
@@ -10970,44 +10989,126 @@ html body .card {
   border-radius: 0 !important;
 }
 
-.card-body {
-  margin-top: 40%;
+.forms .card-body {
+  margin-top: 20%;
 }
 
-.center {
+.forms .center {
   margin: 0 auto;
 }
 
-.align-right {
+.forms .align-right {
   text-align: right;
 }
 
-.align-center {
+.forms .align-center {
   text-align: center;
 }
 
-.forgot {
+.forms .forgot {
   color: #fff !important;
 }
 
-.join {
+.forms .join {
   font-size: 20px;
   color: #FCBF49;
 }
 
-.join:hover {
+.forms .join:hover {
   font-size: 21px;
   color: #FCBF49 !important;
   text-decoration: underline;
 }
 
-.login-button {
+.forms .login-button {
   color: #fff !important;
   background-color: transparent !important;
   border: 2px solid #599FA5 !important;
 }
 
-.login-button:hover {
+.forms .login-button:hover {
   background-color: #599FA5 !important;
+}
+
+.forms ::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.forms :-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+}
+
+.forms ::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+}
+
+.forms :-ms-input-placeholder {
+  text-align: center;
+}
+
+.forms h1 {
+  font-weight: 100 !important;
+}
+
+.forms .register-button {
+  margin-top: 40px;
+  color: #fff !important;
+  background-color: transparent !important;
+  border: 2px solid #FCBF49 !important;
+}
+
+.forms .register-button:hover {
+  background-color: #FCBF49 !important;
+}
+
+.forms .submit-button {
+  padding: 10px 50px;
+  border-radius: 20px;
+}
+
+div .margin-top-container {
+  margin-top: 3%;
+}
+
+div .margin-top-between {
+  margin-top: 1%;
+}
+
+div .lesson-container {
+  position: relative;
+  border: 2px solid #599FA5;
+  border-right: 50px solid #599FA5;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1.5% 0%;
+  padding-left: 1%;
+  border-radius: 20px;
+}
+
+div .lesson-container #lesson-link {
+  position: absolute;
+  top: 7%;
+  right: -32px;
+  text-align: center;
+}
+
+div .quiz-container {
+  position: relative;
+  border: 2px solid #FCBF49;
+  border-right: 50px solid #FCBF49;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1.5% 0%;
+  padding-left: 1%;
+  border-radius: 20px;
+}
+
+div .quiz-container #quiz-link {
+  position: absolute;
+  top: 23%;
+  right: -32px;
+  text-align: center;
 }
 

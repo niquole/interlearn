@@ -10,8 +10,12 @@ html {
     
     a {
       text-decoration: none;
-      color: #599FA5 ;
+      color: #fff !important;
       
+      :hover {
+      color: #fff !important;
+
+      }
       .nav-brand {
         position: relative;
         
@@ -32,30 +36,35 @@ html {
     
     li {
       a {
-        .el-button--warning.is-plain {
+        #create {
           position: absolute;
           left: 5%;
+          color: #fff !important;
           background-color: transparent !important;
-          font-size: large;
           border: 2px solid #FCBF49 !important;
-          color: #fff;
-          
-          :hover {
-            color: #FCBF49 !important;
-          }
+          padding: 10px 30px;
+          border-radius: 20px;
         }
         
-        .el-button--primary.is-plain {
+        #create:hover {
+          background-color: #FCBF49 !important;
+        }
+        
+        #login-link {
           position: absolute;
           right: 5%;
           background-color: transparent !important;
           font-size: large;
           border: 2px solid #599FA5 !important;
+          padding: 10px 30px;
+          border-radius: 20px;
+          
           color: #fff;
-          :hover {
-            color: #599FA5;
-            
-          }
+        }
+        
+        #login-link:hover {
+          background-color: #599FA5 !important;
+          
         }
       } 
     }
@@ -64,11 +73,23 @@ html {
     .navbar-expand-md .navbar-nav .nav-link {
       margin-left: 30vw !important;
     }
-
+    
     .card {
       background-color: transparent !important;
       margin: 0 auto !important;
     }
     
+    #current-user {
+      color: #fff !important;
+    }
+    #dropdown-arrow a{
+      color: #FCBF49 !important;
+    }
+
+    #logout{
+      color: black !important;
+    }
+
+  
   }
 }
