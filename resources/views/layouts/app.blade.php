@@ -63,7 +63,7 @@
                                 @endif
                                 @else
                                 <li class="nav-item">
-                                    <a  class="nav-link" href="/create">                                    
+                                    <a  class="nav-link" href="/create-lesson">                                    
                                         <button id="create" >{{ __('Create') }}</button></a>
                                         
                                     </li>

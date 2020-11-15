@@ -8,6 +8,6 @@ class CreateLessonController extends Controller
 {
     public function index()
     {
-        return view('createLesson');
+        return view('create_lesson');
     }
 }
