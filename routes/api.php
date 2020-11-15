@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::middleware('api')->get('/users', 'App\Http\Controllers\ApiUserController@index');
+Route::middleware('api')->get('/quizzes', 'App\Http\Controllers\ApiQuizController@index');

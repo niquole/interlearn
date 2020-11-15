@@ -77,7 +77,7 @@
         <div class="subheader">Last but not the least!</div>
     </div>
     <div class="step-content three">
-        <button class="close-btn">Done</button>
+        <button class="close-btn" type="submit">Done</button>
     </div>
 </div>
 </div>
