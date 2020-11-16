@@ -8,6 +8,6 @@ class CreateQuizController extends Controller
 {
     public function index()
     {
-        return view('createQuiz');
+        return view('create_quiz');
     }
 }

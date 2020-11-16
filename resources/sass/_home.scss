@@ -1,16 +1,55 @@
 div {
+    // width: 20vw;
+
+    // }
+    .navigation {
+        // margin: 0 auto;
+        text-align: center;
+        font-weight: bold;
+
+        a:nth-of-type(2) {
+        margin-left: 20px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+
+        }
+    }
+
+    // #quiz-nav {
+    //     font-size: 20px;
+    // }
+
+    // #lesson-nav {
+    //     font-size: 20px;
+
+    // }
+
+    .active, .navlink:hover {
+        font-size: 22px;
+        
+    }
+
+    .active {
+        text-decoration: underline;
+        
+    }
+
     .margin-top-container {
-        margin-top: 3%;
+        padding-top: 2%;
+        width: 80vw;
+        margin: 0 auto;
+
     }
 
     .margin-top-between {
         margin-top: 1%;
+        width: 80vw;
     }
     .lesson-container{
         position: relative;
         border: 2px solid #599FA5;
         border-right: 50px solid #599FA5;
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         padding: 1.5% 0%;
         padding-left: 1%;
@@ -29,16 +68,17 @@ div {
         position: relative;
         border: 2px solid #FCBF49;
         border-right: 50px solid #FCBF49;
-        width: 80%;
-        margin: 0 auto;
+        margin: 0px;
         padding: 1.5% 0%;
         padding-left: 1%;
         border-radius: 20px;
+        align-items: flex-end;
+
 
         #quiz-link {
+            right: -2%;
             position: absolute;
-            top: 23%;
-            right: -32px;
+            top: 25%;
             text-align: center;
         }
     }

@@ -10914,6 +10914,7 @@ html body {
 html body a {
   text-decoration: none;
   color: #fff !important;
+  transition: 0.3s !important;
 }
 
 html body a :hover {
@@ -11068,19 +11069,42 @@ html body #logout {
   border-radius: 20px;
 }
 
+div .navigation {
+  text-align: center;
+  font-weight: bold;
+}
+
+div .navigation a:nth-of-type(2) {
+  margin-left: 20px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+div .active,
+div .navlink:hover {
+  font-size: 22px;
+}
+
+div .active {
+  text-decoration: underline;
+}
+
 div .margin-top-container {
-  margin-top: 3%;
+  padding-top: 2%;
+  width: 80vw;
+  margin: 0 auto;
 }
 
 div .margin-top-between {
   margin-top: 1%;
+  width: 80vw;
 }
 
 div .lesson-container {
   position: relative;
   border: 2px solid #599FA5;
   border-right: 50px solid #599FA5;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   padding: 1.5% 0%;
   padding-left: 1%;
@@ -11098,28 +11122,29 @@ div .quiz-container {
   position: relative;
   border: 2px solid #FCBF49;
   border-right: 50px solid #FCBF49;
-  width: 80%;
-  margin: 0 auto;
+  margin: 0px;
   padding: 1.5% 0%;
   padding-left: 1%;
   border-radius: 20px;
+  align-items: flex-end;
 }
 
 div .quiz-container #quiz-link {
+  right: -2%;
   position: absolute;
-  top: 23%;
-  right: -32px;
+  top: 25%;
   text-align: center;
 }
 
 .steps {
   width: 50vw;
-  box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 10px 15px -5px rgba(255, 255, 255, 0.1);
   background-color: transparent;
-  padding: 24px 0;
+  padding: 3% 0px 7% 0px;
   color: #FFF;
   position: relative;
-  margin: auto;
+  margin: 2% auto;
+  border-radius: 20px;
 }
 
 .steps::before {
@@ -11140,7 +11165,7 @@ div .quiz-container #quiz-link {
   width: 13px;
   background-color: var(--primary-color);
   box-shadow: 0px 0px 5px 0px var(--primary-color);
-  border-radius: 15px;
+  border-radius: 20px;
   left: calc(50px / 2);
   bottom: 24px;
   transform: translateX(-45%);
@@ -11160,7 +11185,7 @@ div .quiz-container #quiz-link {
   height: 13px;
   width: 13px;
   background-color: transparent;
-  border-radius: 15px;
+  border-radius: 20px;
   left: calc(50px / 2);
   transform: translateX(-45%);
   z-index: 2;
@@ -11211,15 +11236,15 @@ div .quiz-container #quiz-link {
 }
 
 .step-content.one {
-  height: 230px;
+  height: 30vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
+  border-radius: 4x;
   margin-top: 10px;
 }
 
 .step-content.two {
-  height: 230px;
+  height: 30vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
@@ -11227,7 +11252,7 @@ div .quiz-container #quiz-link {
 }
 
 .step-content.three {
-  height: 230px;
+  height: 30vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 4px;

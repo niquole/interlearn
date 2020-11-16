@@ -28,7 +28,9 @@ Vue.use(ElementUI);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('homepage-component', require('./components/HomeComponent.vue').default);
+Vue.component('quizzes-component', require('./components/QuizzesComponent.vue').default);
+Vue.component('lessons-component', require('./components/LessonsComponent.vue').default);
+
 Vue.component('landing-component', require('./components/LandingComponent.vue').default);
 Vue.component('create-lesson-component', require('./components/CreateLessonComponent.vue').default);
 Vue.component('create-quiz-component', require('./components/CreateQuizComponent.vue').default);

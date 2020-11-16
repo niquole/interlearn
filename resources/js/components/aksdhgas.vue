@@ -2,27 +2,29 @@
     <div class="margin-top-container">
 
         <div v-for="(quiz,i) in quizzes" :key="i">
-            <div class="margin-top-between">
+            <a :href="'/quiz/' + quiz.id">
+                <div class="margin-top-between">
                 
-                <div class="lesson-container">
-                    <h2>{{ quiz.title }}</h2>
-                    <p >{{ quiz.description }}</p>
-                    <span>{{ quiz.user_id }}</span>
-                    <div id="lesson-link">
-                        L
-                        <br>
-                        E
-                        <br>
-                        S
-                        <br>
-                        S
-                        <br>
-                        O 
-                        <br>
-                        N
+                    <div class="lesson-container">
+                        <h2>{{ quiz.title }}</h2>
+                        <p >{{ quiz.description }}</p>
+                        <span>{{ quiz.user.name }}</span>
+                        <div id="lesson-link">
+                            L
+                            <br>
+                            E
+                            <br>
+                            S
+                            <br>
+                            S
+                            <br>
+                            O 
+                            <br>
+                            N
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
         
         <!-- <div class="margin-top-between">
@@ -47,16 +49,15 @@
 
 <script>
     export default {
+        props: ["dataQuiz"],
       data() {
         return {
-          quizzes: []
+          quizzes:[]
         }
       },
       mounted() {
-        //   console.log(quiz.user.name);
-          axios.get('/api/quizzes').then((response) => {
-              this.quizzes = response.data
-          });
+        this.quizzes = JSON.parse(this.dataQuiz);
       }
     }
   </script>
+

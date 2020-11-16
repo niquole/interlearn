@@ -29,7 +29,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md  shadow-sm">
             <div class="container">
-                <a class="navbar-brand " href="{{ url('/') }}">
+                <a class="navbar-brand " href="{{ url('/lessons') }}">
                     <!-- {{ config('app.name', 'InterLearn') }} -->
                     <img src="./images/logo.png" alt="" id="logo" class="">
                 </a>
