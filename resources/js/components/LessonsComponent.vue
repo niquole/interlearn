@@ -6,14 +6,14 @@
             
         </div>
         <div  class="margin-top-container">
-            <div v-for="(lesson,i) in lessons" :key="i">
+            <div v-for="lesson in lessons" :key="lesson.id">
                 <a class="link" :href="'/lesson/' + lesson.id">
                     <div class="margin-top-between">
                     
                     <div class="lesson-container">
                         <h4>{{ lesson.title }}</h4>
                         <p >{{lesson.description}}</p>
-                        <span>{{ lesson.user }}</span>
+                        <span>{{ lesson.user.name }}</span>
                         
                         <div id="lesson-link">
                             L

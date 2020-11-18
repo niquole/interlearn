@@ -23,7 +23,7 @@ Route::get('/', [App\Http\Controllers\LessonController::class, 'index'])->name('
 Route::get('/quizzes', [App\Http\Controllers\QuizController::class, 'index'])->name('/quizzes');
 Route::get('/create-quiz', [App\Http\Controllers\CreateQuizController::class, 'index'])->name('/create-quiz');
 
-Route::post('/create-quiz', [App\Http\Controllers\CreateQuizController::class, 'store'])->name('/create-quiz');
+// Route::middleware('auth:api')->post('/create-quiz', [App\Http\Controllers\CreateQuizController::class, 'store'])->name('/create-quiz');
 // Route::get('/create-quiz', [App\Http\Controllers\CreateQuizController::class, 'create'])->name('/create-quiz');
 
 

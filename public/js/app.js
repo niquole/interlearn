@@ -2063,55 +2063,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {},
+  props: ["dataUser"],
   data: function data() {
     return {
+      user: [],
       form: {
         title: "",
         description: ""
+      },
+      headers: {
+        'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
       }
     };
   },
   methods: {
     submitForm: function submitForm() {
-      axios.post("/api/quizzes", this.form);
+      console.log(this.form);
+      axios.post("/api/quizzes", this.form); // .then((response) => {
+      //     window.location.href = '/users/' + this.user.id;
+      // })
     }
   },
-  mounted: function mounted() {// this.user = JSON.parse(this.dataUser); 
-    // console.log(this.user)
+  mounted: function mounted() {
+    this.user = JSON.parse(this.dataUser);
   }
 });
 
@@ -100462,79 +100437,104 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-6 mb-2" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c(
-              "form",
-              {
-                staticClass: "post-form",
-                attrs: { enctype: "multipart/form-data" }
-              },
-              [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.title,
-                      expression: "form.title"
-                    }
-                  ],
-                  staticClass: "form-control mb-2",
-                  attrs: { placeholder: "title", type: "text" },
-                  domProps: { value: _vm.form.title },
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-12 mb-12" }, [
+        _c(
+          "form",
+          { attrs: { action: "POST", enctype: "multipart/form-data" } },
+          [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.title,
+                  expression: "form.title"
+                }
+              ],
+              staticClass: "form-control mb-6",
+              attrs: { placeholder: "Title" },
+              domProps: { value: _vm.form.title },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "title", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.description,
+                  expression: "form.description"
+                }
+              ],
+              staticClass: "form-control mb-1 form-control",
+              attrs: { placeholder: "Body" },
+              domProps: { value: _vm.form.description },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "description", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "button",
+                {
+                  staticClass: "submitArticle btn upload",
+                  attrs: { type: "button" },
                   on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "title", $event.target.value)
+                    click: function($event) {
+                      return _vm.submitForm()
                     }
                   }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.form.description,
-                      expression: "form.description"
-                    }
-                  ],
-                  staticClass: "form-control mb-2",
-                  attrs: { placeholder: "description", type: "text" },
-                  domProps: { value: _vm.form.description },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.form, "description", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "submitPost btn btn-outline-light form-control mt-3",
-                    attrs: { type: "button" },
-                    on: { click: _vm.submitForm }
-                  },
-                  [_vm._v("Post")]
-                )
-              ]
-            )
-          ])
-        ])
+                },
+                [_vm._v("Submit")]
+              )
+            ])
+          ]
+        )
       ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "navigation" }, [
+      _c(
+        "a",
+        {
+          staticClass: "navlink ",
+          attrs: { href: "/create-lesson", id: "lesson-nav" }
+        },
+        [_vm._v("Lesson")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "navlink active",
+          attrs: { href: "/create-quiz", id: "quiz-nav" }
+        },
+        [_vm._v("Quiz")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -100595,8 +100595,8 @@ var render = function() {
     _c(
       "div",
       { staticClass: "margin-top-container" },
-      _vm._l(_vm.lessons, function(lesson, i) {
-        return _c("div", { key: i }, [
+      _vm._l(_vm.lessons, function(lesson) {
+        return _c("div", { key: lesson.id }, [
           _c(
             "a",
             { staticClass: "link", attrs: { href: "/lesson/" + lesson.id } },
@@ -100607,7 +100607,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", [_vm._v(_vm._s(lesson.description))]),
                   _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(lesson.user))]),
+                  _c("span", [_vm._v(_vm._s(lesson.user.name))]),
                   _vm._v(" "),
                   _vm._m(1, true)
                 ])
@@ -113030,15 +113030,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!***********************************************************!*\
   !*** ./resources/js/components/CreateLessonComponent.vue ***!
   \***********************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CreateLessonComponent_vue_vue_type_template_id_122e002e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateLessonComponent.vue?vue&type=template&id=122e002e& */ "./resources/js/components/CreateLessonComponent.vue?vue&type=template&id=122e002e&");
 /* harmony import */ var _CreateLessonComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateLessonComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/CreateLessonComponent.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _CreateLessonComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _CreateLessonComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -113068,7 +113067,7 @@ component.options.__file = "resources/js/components/CreateLessonComponent.vue"
 /*!************************************************************************************!*\
   !*** ./resources/js/components/CreateLessonComponent.vue?vue&type=script&lang=js& ***!
   \************************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
