@@ -12,7 +12,7 @@
                     
                     <div class="lesson-container">
                         <h4>{{ lesson.title }}</h4>
-                        <p >{{lesson.description}}</p>
+                        <p >{{ lesson.description}}</p>
                         <span>{{ lesson.user.name }}</span>
                         
                         <div id="lesson-link">
@@ -48,7 +48,7 @@
             }
         },
         mounted() {
-            //   console.log(quiz.user.name);
+              console.log(this.lessons);
             var navlinks = document.getElementsByClassName("navlink");
             
             for (var i = 0; i < navlinks.length; i++) {

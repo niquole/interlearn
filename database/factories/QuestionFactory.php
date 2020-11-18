@@ -23,7 +23,7 @@ class QuestionFactory extends Factory
     {
         return [
             'text'=> $this->faker->sentence(6),
-            'quiz_id'=> $this->faker->numberBetween(0, 80)
+            'quiz_id'=> $this->faker->numberBetween(1, 80)
         ];
     }
 }

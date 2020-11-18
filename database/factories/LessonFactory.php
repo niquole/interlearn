@@ -24,7 +24,7 @@ class LessonFactory extends Factory
         return [
             'title'=> $this->faker->name,
             'description'=> $this->faker->sentence(5),
-            'user_id'=> $this->faker->numberBetween(0, 50)
+            'user_id'=> $this->faker->numberBetween(1, 50)
         ];
     }
 }

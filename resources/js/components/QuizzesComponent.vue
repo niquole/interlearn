@@ -6,13 +6,13 @@
             <a href="/quizzes" id="quiz-nav" class="navlink active ">Quizzes</a>
         </div>
         <div  class="margin-top-container">
-            <div v-for="(quiz,i) in quizzes" :key="i">
+            <div v-for="quiz in quizzes" :key="quiz.id">
                 <a class="link" :href="'/quiz/' + quiz.id">
                     <div class="margin-top-between">
                         <div class="quiz-container">
                             <h4>{{ quiz.title }}</h4>
                             <p >{{ quiz.description }}</p>
-                            <span>{{ quiz.user }}</span>
+                            <span>{{ quiz.user.name }}</span>
                             <div id="quiz-link">
                                 Q
                                 <br>
@@ -41,7 +41,6 @@
             }
         },
         mounted() {
-            //   console.log(quiz.user.name);
             var navlinks = document.getElementsByClassName("navlink");
             
             for (var i = 0; i < navlinks.length; i++) {

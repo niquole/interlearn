@@ -2185,7 +2185,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    //   console.log(quiz.user.name);
+    console.log(this.lessons);
     var navlinks = document.getElementsByClassName("navlink");
 
     for (var i = 0; i < navlinks.length; i++) {
@@ -2257,7 +2257,6 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    //   console.log(quiz.user.name);
     var navlinks = document.getElementsByClassName("navlink");
 
     for (var i = 0; i < navlinks.length; i++) {
@@ -100691,8 +100690,8 @@ var render = function() {
     _c(
       "div",
       { staticClass: "margin-top-container" },
-      _vm._l(_vm.quizzes, function(quiz, i) {
-        return _c("div", { key: i }, [
+      _vm._l(_vm.quizzes, function(quiz) {
+        return _c("div", { key: quiz.id }, [
           _c(
             "a",
             { staticClass: "link", attrs: { href: "/quiz/" + quiz.id } },
@@ -100703,7 +100702,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", [_vm._v(_vm._s(quiz.description))]),
                   _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(quiz.user))]),
+                  _c("span", [_vm._v(_vm._s(quiz.user.name))]),
                   _vm._v(" "),
                   _vm._m(1, true)
                 ])

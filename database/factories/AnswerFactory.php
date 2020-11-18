@@ -23,8 +23,8 @@ class AnswerFactory extends Factory
     {
         return [
             'is_correct'=> $this->faker->boolean,
-            'question_id'=> $this->faker->numberBetween(0, 140),
-            'user_id'=> $this->faker->numberBetween(0, 50),
+            'question_id'=> $this->faker->numberBetween(1, 140),
+            'user_id'=> $this->faker->numberBetween(1, 50),
 
         ];
     }

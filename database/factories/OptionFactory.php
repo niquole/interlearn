@@ -24,7 +24,7 @@ class OptionFactory extends Factory
         return [
             'choice'=> $this->faker->sentence(5),
             'correct'=> $this->faker->boolean,
-            'question_id'=> $this->faker->numberBetween(0, 140)
+            'question_id'=> $this->faker->numberBetween(1, 140)
         ];
     }
 }
