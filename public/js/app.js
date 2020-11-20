@@ -1997,33 +1997,109 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["dataUser"],
   data: function data() {
     return {
-      user: [],
       form: {
         title: "",
         description: ""
       }
     };
   },
-  methods: {
-    submitForm: function submitForm() {
-      var _this = this;
-
-      axios.post("/api/lessons", this.form).then(function (response) {
-        window.location.href = '/users/' + _this.user.id;
-      });
-    }
+  methods: {// handleUpload(result, file) {
+    //     this.form.image = "/storage/" + result.name
+    // },
+    // submitForm() {
+    //     axios.post("/api/lessons", this.form)
+    // }
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var curOpen;
+    $(document).ready(function () {
+      curOpen = $('.step')[0];
+      $('.next-btn').on('click', function () {
+        var cur = $(this).closest('.step');
+        var next = $(cur).next();
+        $(cur).addClass('minimized');
+        setTimeout(function () {
+          $(next).removeClass('minimized');
+          curOpen = $(next);
+        }, 400);
+      });
+      $('.close-btn').on('click', function () {
+        var cur = $(this).closest('.step');
+        $(cur).addClass('minimized');
+        curOpen = null;
+      });
+      $('.step .step-content').on('click', function (e) {
+        e.stopPropagation();
+      });
+      $('.step').on('click', function () {
+        if (!$(this).hasClass("minimized")) {
+          curOpen = null;
+          $(this).addClass('minimized');
+        } else {
+          var next = $(this);
 
-    axios.get("/api/categories").then(function (response) {
-      _this2.categories = response.data;
+          if (curOpen === null) {
+            curOpen = next;
+            $(curOpen).removeClass('minimized');
+          } else {
+            $(curOpen).addClass('minimized');
+            setTimeout(function () {
+              $(next).removeClass('minimized');
+              curOpen = $(next);
+            }, 300);
+          }
+        }
+      });
     });
-    this.user = JSON.parse(this.dataUser);
   }
 });
 
@@ -2063,30 +2139,112 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["dataUser"],
   data: function data() {
     return {
-      user: [],
       form: {
         title: "",
         description: ""
-      },
-      headers: {
-        'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
       }
     };
   },
-  methods: {
-    submitForm: function submitForm() {
-      console.log(this.form);
-      axios.post("/api/quizzes", this.form); // .then((response) => {
-      //     window.location.href = '/users/' + this.user.id;
-      // })
-    }
+  methods: {// handleUpload(result, file) {
+    //     this.form.image = "/storage/" + result.name
+    // },
+    // submitForm() {
+    //     axios.post("/api/lessons", this.form)
+    // }
   },
   mounted: function mounted() {
-    this.user = JSON.parse(this.dataUser);
+    var curOpen;
+    $(document).ready(function () {
+      curOpen = $('.step')[0];
+      $('.next-btn').on('click', function () {
+        var cur = $(this).closest('.step');
+        var next = $(cur).next();
+        $(cur).addClass('minimized');
+        setTimeout(function () {
+          $(next).removeClass('minimized');
+          curOpen = $(next);
+        }, 400);
+      });
+      $('.close-btn').on('click', function () {
+        var cur = $(this).closest('.step');
+        $(cur).addClass('minimized');
+        curOpen = null;
+      });
+      $('.step .step-content').on('click', function (e) {
+        e.stopPropagation();
+      });
+      $('.step').on('click', function () {
+        if (!$(this).hasClass("minimized")) {
+          curOpen = null;
+          $(this).addClass('minimized');
+        } else {
+          var next = $(this);
+
+          if (curOpen === null) {
+            curOpen = next;
+            $(curOpen).removeClass('minimized');
+          } else {
+            $(curOpen).addClass('minimized');
+            setTimeout(function () {
+              $(next).removeClass('minimized');
+              curOpen = $(next);
+            }, 300);
+          }
+        }
+      });
+    });
   }
 });
 
@@ -2184,17 +2342,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     var _this = this;
-
-    console.log(this.lessons);
-    var navlinks = document.getElementsByClassName("navlink");
-
-    for (var i = 0; i < navlinks.length; i++) {
-      navlinks[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-      });
-    }
 
     axios.get('/api/lessons').then(function (response) {
       _this.lessons = response.data;
@@ -100311,79 +100458,121 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-12 mb-12" }, [
-        _c(
-          "form",
-          {
-            staticClass: "lesson-form",
-            attrs: { enctype: "multipart/form-data" }
-          },
-          [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "steps" }, [
+      _c("div", { staticClass: "step" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("div", { staticClass: "step-content one" }, [
+          _c(
+            "form",
+            [
+              _c("el-input", {
+                attrs: { type: "textarea", autosize: "", placeholder: "Title" },
+                model: {
                   value: _vm.form.title,
+                  callback: function($$v) {
+                    _vm.$set(_vm.form, "title", $$v)
+                  },
                   expression: "form.title"
                 }
-              ],
-              staticClass: "form-control mb-6",
-              attrs: { placeholder: "Title" },
-              domProps: { value: _vm.form.title },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "title", $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
+              }),
+              _vm._v(" "),
+              _c("div", { staticStyle: { margin: "20px 0" } }),
+              _vm._v(" "),
+              _c("el-input", {
+                attrs: {
+                  type: "textarea",
+                  autosize: { minRows: 2, maxRows: 4 },
+                  placeholder: "Description"
+                },
+                model: {
                   value: _vm.form.description,
+                  callback: function($$v) {
+                    _vm.$set(_vm.form, "description", $$v)
+                  },
                   expression: "form.description"
                 }
-              ],
-              staticClass: "form-control mb-1 form-control",
-              attrs: { placeholder: "Body" },
-              domProps: { value: _vm.form.description },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "description", $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("div", [
+              }),
+              _vm._v(" "),
               _c(
                 "button",
                 {
-                  staticClass: "submitArticle btn upload",
+                  staticClass: "next-btn",
                   attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.submitForm()
-                    }
-                  }
+                  on: { click: _vm.submitForm }
                 },
-                [_vm._v("Submit")]
+                [_vm._v("Next")]
               )
-            ])
-          ]
-        )
-      ])
+            ],
+            1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "step minimized" }, [
+        _vm._m(2),
+        _vm._v(" "),
+        _c("div", { staticClass: "step-content two" }, [
+          _c(
+            "form",
+            {
+              staticClass: "post-form",
+              attrs: { enctype: "multipart/form-data" }
+            },
+            [
+              _c("el-input", {
+                attrs: { type: "textarea", autosize: "", placeholder: "Title" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticStyle: { margin: "20px 0" } }),
+              _vm._v(" "),
+              _c("el-input", {
+                attrs: {
+                  type: "textarea",
+                  autosize: { minRows: 2, maxRows: 4 },
+                  placeholder: "Description"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "el-upload",
+                { staticClass: "upload-demo", attrs: { action: "" } },
+                [
+                  _c(
+                    "el-button",
+                    { attrs: { size: "small", type: "primary" } },
+                    [_vm._v("Click to upload an image")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "el-upload__tip",
+                      attrs: { slot: "tip" },
+                      slot: "tip"
+                    },
+                    [_vm._v("jpg/png files with a size less than 500kb")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "next-btn", attrs: { type: "button" } },
+                [_vm._v("Next")]
+              )
+            ],
+            1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(3)
     ])
   ])
 }
@@ -100405,11 +100594,57 @@ var staticRenderFns = [
       _c(
         "a",
         {
-          staticClass: "navlink",
+          staticClass: "navlink ",
           attrs: { href: "/create-quiz", id: "quiz-nav" }
         },
         [_vm._v("Quiz")]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "step-header" }, [
+      _c("div", { staticClass: "header" }, [_vm._v("Firt Step")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "subheader" }, [
+        _vm._v("Please determine your lessons Title and Description")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "step-header" }, [
+      _c("div", { staticClass: "header" }, [_vm._v("Second Step")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "subheader" }, [
+        _vm._v("Add a title, content and an image!")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "step minimized" }, [
+      _c("div", { staticClass: "step-header" }, [
+        _c("div", { staticClass: "header" }, [
+          _vm._v("And finally step three!")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "subheader" }, [
+          _vm._v("Last but not the least!")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "step-content three" }, [
+        _c("button", { staticClass: "close-btn", attrs: { type: "submit" } }, [
+          _vm._v("Done")
+        ])
+      ])
     ])
   }
 ]
@@ -100435,76 +100670,121 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-12 mb-12" }, [
-        _c(
-          "form",
-          { attrs: { action: "POST", enctype: "multipart/form-data" } },
-          [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "steps" }, [
+      _c("div", { staticClass: "step" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("div", { staticClass: "step-content one" }, [
+          _c(
+            "form",
+            [
+              _c("el-input", {
+                attrs: { type: "textarea", autosize: "", placeholder: "Title" },
+                model: {
                   value: _vm.form.title,
+                  callback: function($$v) {
+                    _vm.$set(_vm.form, "title", $$v)
+                  },
                   expression: "form.title"
                 }
-              ],
-              staticClass: "form-control mb-6",
-              attrs: { placeholder: "Title" },
-              domProps: { value: _vm.form.title },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "title", $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
+              }),
+              _vm._v(" "),
+              _c("div", { staticStyle: { margin: "20px 0" } }),
+              _vm._v(" "),
+              _c("el-input", {
+                attrs: {
+                  type: "textarea",
+                  autosize: { minRows: 2, maxRows: 4 },
+                  placeholder: "Description"
+                },
+                model: {
                   value: _vm.form.description,
+                  callback: function($$v) {
+                    _vm.$set(_vm.form, "description", $$v)
+                  },
                   expression: "form.description"
                 }
-              ],
-              staticClass: "form-control mb-1 form-control",
-              attrs: { placeholder: "Body" },
-              domProps: { value: _vm.form.description },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "description", $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("div", [
+              }),
+              _vm._v(" "),
               _c(
                 "button",
                 {
-                  staticClass: "submitArticle btn upload",
+                  staticClass: "next-btn",
                   attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.submitForm()
-                    }
-                  }
+                  on: { click: _vm.submitForm }
                 },
-                [_vm._v("Submit")]
+                [_vm._v("Next")]
               )
-            ])
-          ]
-        )
-      ])
+            ],
+            1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "step minimized" }, [
+        _vm._m(2),
+        _vm._v(" "),
+        _c("div", { staticClass: "step-content two" }, [
+          _c(
+            "form",
+            {
+              staticClass: "post-form",
+              attrs: { enctype: "multipart/form-data" }
+            },
+            [
+              _c("el-input", {
+                attrs: { type: "textarea", autosize: "", placeholder: "Title" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticStyle: { margin: "20px 0" } }),
+              _vm._v(" "),
+              _c("el-input", {
+                attrs: {
+                  type: "textarea",
+                  autosize: { minRows: 2, maxRows: 4 },
+                  placeholder: "Description"
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "el-upload",
+                { staticClass: "upload-demo", attrs: { action: "" } },
+                [
+                  _c(
+                    "el-button",
+                    { attrs: { size: "small", type: "primary" } },
+                    [_vm._v("Click to upload an image")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "el-upload__tip",
+                      attrs: { slot: "tip" },
+                      slot: "tip"
+                    },
+                    [_vm._v("jpg/png files with a size less than 500kb")]
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "next-btn", attrs: { type: "button" } },
+                [_vm._v("Next")]
+              )
+            ],
+            1
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(3)
     ])
   ])
 }
@@ -100526,11 +100806,57 @@ var staticRenderFns = [
       _c(
         "a",
         {
-          staticClass: "navlink active",
+          staticClass: "navlink active ",
           attrs: { href: "/create-quiz", id: "quiz-nav" }
         },
         [_vm._v("Quiz")]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "step-header" }, [
+      _c("div", { staticClass: "header" }, [_vm._v("Firt Step")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "subheader" }, [
+        _vm._v("Please determine your lessons Title and Description")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "step-header" }, [
+      _c("div", { staticClass: "header" }, [_vm._v("Second Step")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "subheader" }, [
+        _vm._v("Add a title, content and an image!")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "step minimized" }, [
+      _c("div", { staticClass: "step-header" }, [
+        _c("div", { staticClass: "header" }, [
+          _vm._v("And finally step three!")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "subheader" }, [
+          _vm._v("Last but not the least!")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "step-content three" }, [
+        _c("button", { staticClass: "close-btn", attrs: { type: "submit" } }, [
+          _vm._v("Done")
+        ])
+      ])
     ])
   }
 ]

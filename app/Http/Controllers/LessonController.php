@@ -8,8 +8,9 @@ class LessonController extends Controller
 {
     public function index()
     {
-        $quiz = Lesson::with(['user'])->GET();
-        return view("lessons");
+        $lesson = Lesson::with(['user'])->GET();
+        return view("lessons",  compact("lesson"));
         
     }
+
 }
