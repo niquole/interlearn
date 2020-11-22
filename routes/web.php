@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 Auth::routes();
-// Route::get('/', [App\Http\Controllers\LessonController::class, 'index'])->name('/lessons');
+Route::get('/', [App\Http\Controllers\LessonController::class, 'index'])->name('/lessons');
 
 Route::get('/quizzes', [App\Http\Controllers\QuizController::class, 'index'])->name('/quizzes');
 Route::get('/create-quiz', [App\Http\Controllers\CreateQuizController::class, 'index'])->name('/create-quiz');

@@ -2149,102 +2149,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      form: {
-        title: "",
-        description: ""
-      }
+      quizzes: [],
+      loading: false,
+      submitting: false,
+      title: '',
+      description: ''
     };
   },
-  methods: {// handleUpload(result, file) {
-    //     this.form.image = "/storage/" + result.name
-    // },
-    // submitForm() {
-    //     axios.post("/api/lessons", this.form)
-    // }
-  },
-  mounted: function mounted() {
-    var curOpen;
-    $(document).ready(function () {
-      curOpen = $('.step')[0];
-      $('.next-btn').on('click', function () {
-        var cur = $(this).closest('.step');
-        var next = $(cur).next();
-        $(cur).addClass('minimized');
-        setTimeout(function () {
-          $(next).removeClass('minimized');
-          curOpen = $(next);
-        }, 400);
-      });
-      $('.close-btn').on('click', function () {
-        var cur = $(this).closest('.step');
-        $(cur).addClass('minimized');
-        curOpen = null;
-      });
-      $('.step .step-content').on('click', function (e) {
-        e.stopPropagation();
-      });
-      $('.step').on('click', function () {
-        if (!$(this).hasClass("minimized")) {
-          curOpen = null;
-          $(this).addClass('minimized');
-        } else {
-          var next = $(this);
+  methods: {
+    fetchquizzes: function fetchquizzes() {
+      var _this = this;
 
-          if (curOpen === null) {
-            curOpen = next;
-            $(curOpen).removeClass('minimized');
-          } else {
-            $(curOpen).addClass('minimized');
-            setTimeout(function () {
-              $(next).removeClass('minimized');
-              curOpen = $(next);
-            }, 300);
-          }
-        }
+      this.loading = true;
+      this.quizzes = [];
+      axios.get('http://interlearn.test/api/quizzes').then(function (response) {
+        var data = response.data;
+        _this.quizzes = data;
+        _this.loading = false;
       });
-    });
+    },
+    addquiz: function addquiz() {
+      var _this2 = this;
+
+      this.submitting = true;
+      axios.post('http://interlearn.test/api/quizzes', {
+        title: this.title,
+        description: this.description
+      }).then(function (response) {
+        var data = response.data;
+
+        _this2.quizzes.push(data);
+
+        _this2.title = '';
+        _this2.description = '';
+        _this2.submitting = false;
+      });
+    }
   }
 });
 
@@ -100669,197 +100612,88 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "steps" }, [
-      _c("div", { staticClass: "step" }, [
-        _vm._m(1),
-        _vm._v(" "),
-        _c("div", { staticClass: "step-content one" }, [
-          _c(
-            "form",
-            [
-              _c("el-input", {
-                attrs: { type: "textarea", autosize: "", placeholder: "Title" },
-                model: {
-                  value: _vm.form.title,
-                  callback: function($$v) {
-                    _vm.$set(_vm.form, "title", $$v)
-                  },
-                  expression: "form.title"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticStyle: { margin: "20px 0" } }),
-              _vm._v(" "),
-              _c("el-input", {
-                attrs: {
-                  type: "textarea",
-                  autosize: { minRows: 2, maxRows: 4 },
-                  placeholder: "Description"
-                },
-                model: {
-                  value: _vm.form.description,
-                  callback: function($$v) {
-                    _vm.$set(_vm.form, "description", $$v)
-                  },
-                  expression: "form.description"
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "next-btn",
-                  attrs: { type: "button" },
-                  on: { click: _vm.submitForm }
-                },
-                [_vm._v("Next")]
-              )
-            ],
-            1
-          )
-        ])
-      ]),
+  return _c("div", { attrs: { id: "app-vue" } }, [
+    _c("div", { staticClass: "posts" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", on: { click: _vm.fetchquizzes } },
+        [_vm._v("\n      Fetch posts\n    ")]
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "step minimized" }, [
-        _vm._m(2),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.title,
+            expression: "title"
+          }
+        ],
+        staticClass: "add-search-input",
+        attrs: { type: "text" },
+        domProps: { value: _vm.title },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.title = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.description,
+            expression: "description"
+          }
+        ],
+        staticClass: "add-search-input",
+        attrs: { type: "text" },
+        domProps: { value: _vm.description },
+        on: {
+          keyup: function($event) {
+            if (
+              !$event.type.indexOf("key") &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
+            }
+            return _vm.addquiz($event)
+          },
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.description = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("div", [
+        _vm.submitting ? _c("p", [_vm._v("Submitting...")]) : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "step-content two" }, [
-          _c(
-            "form",
-            {
-              staticClass: "post-form",
-              attrs: { enctype: "multipart/form-data" }
-            },
-            [
-              _c("el-input", {
-                attrs: { type: "textarea", autosize: "", placeholder: "Title" }
-              }),
-              _vm._v(" "),
-              _c("div", { staticStyle: { margin: "20px 0" } }),
-              _vm._v(" "),
-              _c("el-input", {
-                attrs: {
-                  type: "textarea",
-                  autosize: { minRows: 2, maxRows: 4 },
-                  placeholder: "Description"
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "el-upload",
-                { staticClass: "upload-demo", attrs: { action: "" } },
-                [
-                  _c(
-                    "el-button",
-                    { attrs: { size: "small", type: "primary" } },
-                    [_vm._v("Click to upload an image")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "el-upload__tip",
-                      attrs: { slot: "tip" },
-                      slot: "tip"
-                    },
-                    [_vm._v("jpg/png files with a size less than 500kb")]
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
+        _vm.loading ? _c("p", [_vm._v("Loading...")]) : _vm._e(),
+        _vm._v(" "),
+        _c(
+          "ul",
+          _vm._l(_vm.quizzes, function(quiz) {
+            return _c("li", [
+              _vm._v("\n          " + _vm._s(quiz.title) + " - "),
               _c("br"),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "next-btn", attrs: { type: "button" } },
-                [_vm._v("Next")]
-              )
-            ],
-            1
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _vm._m(3)
+              _vm._v(" - " + _vm._s(quiz.description) + "\n        ")
+            ])
+          }),
+          0
+        )
+      ])
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navigation" }, [
-      _c(
-        "a",
-        {
-          staticClass: "navlink ",
-          attrs: { href: "/create-lesson", id: "lesson-nav" }
-        },
-        [_vm._v("Lesson")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "navlink active ",
-          attrs: { href: "/create-quiz", id: "quiz-nav" }
-        },
-        [_vm._v("Quiz")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step-header" }, [
-      _c("div", { staticClass: "header" }, [_vm._v("Firt Step")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "subheader" }, [
-        _vm._v("Please determine your lessons Title and Description")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step-header" }, [
-      _c("div", { staticClass: "header" }, [_vm._v("Second Step")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "subheader" }, [
-        _vm._v("Add a title, content and an image!")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step minimized" }, [
-      _c("div", { staticClass: "step-header" }, [
-        _c("div", { staticClass: "header" }, [
-          _vm._v("And finally step three!")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "subheader" }, [
-          _vm._v("Last but not the least!")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "step-content three" }, [
-        _c("button", { staticClass: "close-btn", attrs: { type: "submit" } }, [
-          _vm._v("Done")
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

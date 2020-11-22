@@ -12,4 +12,7 @@ class ApiUserController extends Controller
     {
         return User::all();
     }
+
+
+
 }

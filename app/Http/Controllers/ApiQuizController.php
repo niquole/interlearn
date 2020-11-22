@@ -13,11 +13,12 @@ class ApiQuizController extends Controller
         return Quiz::with('user')->get();
     }
     
-    // public function store(Request $request)
-    // {
-    //     $request->merge(["user_id" => \Auth::user()->id]);
-    //     Quiz::create($request->all());
-    // }
+    public function store(Request $request)
+    {
+        $request->merge(["user_id" => \Auth::user()->id]);
+        dd($request->all());
+        Quiz::create($request->all());
+    }
 
 }
             

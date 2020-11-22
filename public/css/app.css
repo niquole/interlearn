@@ -11113,7 +11113,7 @@ div .lesson-container {
 
 div .lesson-container #lesson-link {
   position: absolute;
-  top: 7%;
+  top: 0%;
   right: -32px;
   text-align: center;
 }
@@ -11132,7 +11132,7 @@ div .quiz-container {
 div .quiz-container #quiz-link {
   right: -2%;
   position: absolute;
-  top: 25%;
+  top: 20%;
   text-align: center;
 }
 
