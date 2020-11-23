@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Option extends Model
+class content extends Model
 {
     use HasFactory;
-    protected $fillable = ['option','correct', 'question_id'];
+    protected $fillable = ['content', 'img', 'lesson_id'];
+
+
 }

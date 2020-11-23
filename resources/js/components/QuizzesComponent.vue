@@ -2,7 +2,7 @@
 
     <div class="margin-top-container">
         <div class="navigation">
-            <a href="/lessons" id="lesson-nav" class="navlink ">Lessons</a>
+            <a href="/lessons" id="lesson-nav" class="navlink">Lessons</a>
             <a href="/quizzes" id="quiz-nav" class="navlink active ">Quizzes</a>
         </div>
         <div  class="margin-top-container">

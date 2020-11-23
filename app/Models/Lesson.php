@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Lesson extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'description', 'user_id'];
+    protected $fillable = ['title', 'description', 'content', 'img', 'user_id'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+
 }

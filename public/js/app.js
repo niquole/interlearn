@@ -2043,23 +2043,53 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      form: {
-        title: "",
-        description: ""
-      }
+      lessons: [],
+      loading: false,
+      submitting: false,
+      title: '',
+      description: '',
+      content: ''
     };
   },
-  methods: {// handleUpload(result, file) {
-    //     this.form.image = "/storage/" + result.name
-    // },
-    // submitForm() {
-    //     axios.post("/api/lessons", this.form)
-    // }
+  methods: {
+    fetchlessons: function fetchlessons() {
+      var _this = this;
+
+      this.loading = true;
+      this.lessons = [];
+      axios.get('http://interlearn.test/api/lessons').then(function (response) {
+        var data = response.data;
+        _this.lessons = data;
+        _this.loading = false;
+      });
+    },
+    addlesson: function addlesson() {
+      var _this2 = this;
+
+      this.submitting = true;
+      axios.post('http://interlearn.test/api/lessons', {
+        title: this.title,
+        description: this.description,
+        content: this.content,
+        img: this.img
+      }).then(function (response) {
+        var data = response.data;
+
+        _this2.lessons.push(data);
+
+        _this2.title = '';
+        _this2.description = '';
+        _this2.content = '';
+        _this2.submitting = false;
+      });
+    }
   },
   mounted: function mounted() {
+    // STEPPER 
     var curOpen;
     $(document).ready(function () {
       curOpen = $('.step')[0];
@@ -2114,15 +2144,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -100400,25 +100421,43 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "steps" }, [
-      _c("div", { staticClass: "step" }, [
-        _vm._m(1),
-        _vm._v(" "),
-        _c("div", { staticClass: "step-content one" }, [
+  return _c(
+    "div",
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", on: { click: _vm.fetchlessons } },
+        [_vm._v("\n        Fetch lessons\n      ")]
+      ),
+      _vm._v(" "),
+      _vm._l(_vm.lessons, function(lesson) {
+        return _c("li", [
+          _vm._v("\n        " + _vm._s(lesson.title) + "  "),
+          _c("br"),
+          _vm._v("  " + _vm._s(lesson.description) + " "),
+          _c("br"),
+          _vm._v(" " + _vm._s(lesson.content) + "\n      ")
+        ])
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "steps" }, [
+        _c("div", { staticClass: "step" }, [
+          _vm._m(1),
+          _vm._v(" "),
           _c(
-            "form",
+            "div",
+            { staticClass: "step-content one" },
             [
               _c("el-input", {
                 attrs: { type: "textarea", autosize: "", placeholder: "Title" },
                 model: {
-                  value: _vm.form.title,
+                  value: _vm.title,
                   callback: function($$v) {
-                    _vm.$set(_vm.form, "title", $$v)
+                    _vm.title = $$v
                   },
-                  expression: "form.title"
+                  expression: "title"
                 }
               }),
               _vm._v(" "),
@@ -100428,71 +100467,78 @@ var render = function() {
                 attrs: {
                   type: "textarea",
                   autosize: { minRows: 2, maxRows: 4 },
-                  placeholder: "Description"
+                  placeholder: "description"
                 },
                 model: {
-                  value: _vm.form.description,
+                  value: _vm.description,
                   callback: function($$v) {
-                    _vm.$set(_vm.form, "description", $$v)
+                    _vm.description = $$v
                   },
-                  expression: "form.description"
+                  expression: "description"
                 }
               }),
               _vm._v(" "),
               _c(
                 "button",
-                {
-                  staticClass: "next-btn",
-                  attrs: { type: "button" },
-                  on: { click: _vm.submitForm }
-                },
+                { staticClass: "next-btn", attrs: { type: "button" } },
                 [_vm._v("Next")]
               )
             ],
             1
           )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "step minimized" }, [
-        _vm._m(2),
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "step-content two" }, [
+        _c("div", { staticClass: "step minimized" }, [
+          _vm._m(2),
+          _vm._v(" "),
           _c(
-            "form",
-            {
-              staticClass: "post-form",
-              attrs: { enctype: "multipart/form-data" }
-            },
+            "div",
+            { staticClass: "step-content two" },
             [
-              _c("el-input", {
-                attrs: { type: "textarea", autosize: "", placeholder: "Title" }
-              }),
-              _vm._v(" "),
               _c("div", { staticStyle: { margin: "20px 0" } }),
               _vm._v(" "),
               _c("el-input", {
                 attrs: {
                   type: "textarea",
                   autosize: { minRows: 2, maxRows: 4 },
-                  placeholder: "Description"
+                  placeholder: "Lessons Content"
+                },
+                model: {
+                  value: _vm.content,
+                  callback: function($$v) {
+                    _vm.content = $$v
+                  },
+                  expression: "content"
                 }
               }),
               _vm._v(" "),
               _c(
                 "el-upload",
-                { staticClass: "upload-demo", attrs: { action: "" } },
+                {
+                  staticClass: "upload-demo relative",
+                  attrs: { action: "" },
+                  model: {
+                    value: _vm.img,
+                    callback: function($$v) {
+                      _vm.img = $$v
+                    },
+                    expression: "img"
+                  }
+                },
                 [
                   _c(
                     "el-button",
-                    { attrs: { size: "small", type: "primary" } },
+                    {
+                      staticClass: "upload_position",
+                      attrs: { size: "small", type: "primary" }
+                    },
                     [_vm._v("Click to upload an image")]
                   ),
                   _vm._v(" "),
                   _c(
                     "div",
                     {
-                      staticClass: "el-upload__tip",
+                      staticClass: "el-upload__tip text-align-right",
                       attrs: { slot: "tip" },
                       slot: "tip"
                     },
@@ -100512,12 +100558,27 @@ var render = function() {
             ],
             1
           )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "step minimized" }, [
+          _vm._m(3),
+          _vm._v(" "),
+          _c("div", { staticClass: "step-content three" }, [
+            _c(
+              "button",
+              { staticClass: "close-btn", on: { click: _vm.addlesson } },
+              [_vm._v("Done")]
+            ),
+            _vm._v(" "),
+            _vm.submitting ? _c("p", [_vm._v("Submitting...")]) : _vm._e(),
+            _vm._v(" "),
+            _vm.loading ? _c("p", [_vm._v("Loading...")]) : _vm._e()
+          ])
         ])
-      ]),
-      _vm._v(" "),
-      _vm._m(3)
-    ])
-  ])
+      ])
+    ],
+    2
+  )
 }
 var staticRenderFns = [
   function() {
@@ -100549,7 +100610,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "step-header" }, [
-      _c("div", { staticClass: "header" }, [_vm._v("Firt Step")]),
+      _c("div", { staticClass: "header" }, [_vm._v("First Step")]),
       _vm._v(" "),
       _c("div", { staticClass: "subheader" }, [
         _vm._v("Please determine your lessons Title and Description")
@@ -100572,21 +100633,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "step minimized" }, [
-      _c("div", { staticClass: "step-header" }, [
-        _c("div", { staticClass: "header" }, [
-          _vm._v("And finally step three!")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "subheader" }, [
-          _vm._v("Last but not the least!")
-        ])
-      ]),
+    return _c("div", { staticClass: "step-header" }, [
+      _c("div", { staticClass: "header" }, [_vm._v("And finally step three!")]),
       _vm._v(" "),
-      _c("div", { staticClass: "step-content three" }, [
-        _c("button", { staticClass: "close-btn", attrs: { type: "submit" } }, [
-          _vm._v("Done")
-        ])
+      _c("div", { staticClass: "subheader" }, [
+        _vm._v("Last but not the least!")
       ])
     ])
   }
@@ -100612,88 +100663,103 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "app-vue" } }, [
-    _c("div", { staticClass: "posts" }, [
-      _c(
-        "button",
-        { staticClass: "btn btn-primary", on: { click: _vm.fetchquizzes } },
-        [_vm._v("\n      Fetch posts\n    ")]
-      ),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "div",
+      [
+        _c(
+          "button",
+          { staticClass: "btn btn-primary", on: { click: _vm.fetchquizzes } },
+          [_vm._v("\n      Fetch posts\n    ")]
+        ),
+        _vm._v(" "),
+        _c("el-input", {
+          staticClass: "add-search-input",
+          attrs: { type: "text" },
+          model: {
             value: _vm.title,
+            callback: function($$v) {
+              _vm.title = $$v
+            },
             expression: "title"
           }
-        ],
-        staticClass: "add-search-input",
-        attrs: { type: "text" },
-        domProps: { value: _vm.title },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+        }),
+        _vm._v(" "),
+        _c("el-input", {
+          staticClass: "add-search-input",
+          attrs: { type: "text" },
+          on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.addquiz($event)
             }
-            _vm.title = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
+          },
+          model: {
             value: _vm.description,
+            callback: function($$v) {
+              _vm.description = $$v
+            },
             expression: "description"
           }
-        ],
-        staticClass: "add-search-input",
-        attrs: { type: "text" },
-        domProps: { value: _vm.description },
-        on: {
-          keyup: function($event) {
-            if (
-              !$event.type.indexOf("key") &&
-              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-            ) {
-              return null
-            }
-            return _vm.addquiz($event)
-          },
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.description = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("div", [
-        _vm.submitting ? _c("p", [_vm._v("Submitting...")]) : _vm._e(),
+        }),
         _vm._v(" "),
-        _vm.loading ? _c("p", [_vm._v("Loading...")]) : _vm._e(),
+        _c("el-button", { on: { click: _vm.addquiz } }, [_vm._v("submit")]),
         _vm._v(" "),
-        _c(
-          "ul",
-          _vm._l(_vm.quizzes, function(quiz) {
-            return _c("li", [
-              _vm._v("\n          " + _vm._s(quiz.title) + " - "),
-              _c("br"),
-              _vm._v(" - " + _vm._s(quiz.description) + "\n        ")
-            ])
-          }),
-          0
-        )
-      ])
-    ])
+        _c("div", [
+          _vm.submitting ? _c("p", [_vm._v("Submitting...")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.loading ? _c("p", [_vm._v("Loading...")]) : _vm._e(),
+          _vm._v(" "),
+          _c(
+            "ul",
+            _vm._l(_vm.quizzes, function(quiz) {
+              return _c("li", [
+                _vm._v("\n          " + _vm._s(quiz.title) + "  "),
+                _c("br"),
+                _vm._v("  " + _vm._s(quiz.description) + "\n        ")
+              ])
+            }),
+            0
+          )
+        ])
+      ],
+      1
+    )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "navigation" }, [
+      _c(
+        "a",
+        {
+          staticClass: "navlink",
+          attrs: { href: "/create-lesson", id: "lesson-nav" }
+        },
+        [_vm._v("Lesson")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "navlink active",
+          attrs: { href: "/create-quiz", id: "quiz-nav" }
+        },
+        [_vm._v("Quiz")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -100884,7 +100950,7 @@ var staticRenderFns = [
       _c(
         "a",
         {
-          staticClass: "navlink ",
+          staticClass: "navlink",
           attrs: { href: "/lessons", id: "lesson-nav" }
         },
         [_vm._v("Lessons")]

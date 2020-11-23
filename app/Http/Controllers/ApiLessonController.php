@@ -12,9 +12,9 @@ class ApiLessonController extends Controller
         return Lesson::with('user')->get();
     }
 
-    // public function store(Request $request)
-    // {
-    //     $request->merge(["user_id" => \Auth::user()->id]);
-    //     Lesson::create($request->all());
-    // }
+    public function store(Request $request)
+    {
+        $request->merge(["user_id" => \Auth::user()->id]);
+        return Lesson::create($request->all());
+    }
 }

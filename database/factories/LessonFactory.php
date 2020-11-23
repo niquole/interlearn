@@ -22,8 +22,9 @@ class LessonFactory extends Factory
     public function definition()
     {
         return [
-            'title'=> $this->faker->name,
-            'description'=> $this->faker->sentence(5),
+            'title'=> $this->faker->sentence(3),
+            'description'=> $this->faker->sentence(7),
+            'content' => $this->faker->sentence(20),
             'user_id'=> $this->faker->numberBetween(1, 50)
         ];
     }

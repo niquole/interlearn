@@ -11,7 +11,5 @@ class QuizController extends Controller
     {
         $quiz = Quiz::with(['user'])->GET();
         return view("quizzes",  compact("quiz"));
-        
     }
-    
 }

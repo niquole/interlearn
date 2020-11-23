@@ -168,3 +168,21 @@
 .step.minimized:hover {
   background-color: rgba(0, 0, 0, 0.06);
 }
+
+.relative {
+  position: relative;
+}
+
+.upload_position {
+  position: absolute !important;
+  left: 40% !important;
+  // top: 40%;
+  // margin-left: 50%;
+}
+
+.text-align-right {
+  padding-top: 40px;
+
+  // margin: 40px;
+  text-align: center;
+}
