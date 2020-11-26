@@ -16,7 +16,6 @@ class CreateContentsTable extends Migration
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
             $table->string('content');
-            $table->string('img');
             $table->integer('lesson_id')->nullable()->unsigned()->index();
             $table->timestamps();
         });

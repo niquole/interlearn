@@ -1,21 +1,14 @@
 <template>
     
     <div>
+        <!-- NAVIGATION -->
         <div class="navigation">
             <a href="/create-lesson" id="lesson-nav" class="navlink active">Lesson</a>
             <a href="/create-quiz" id="quiz-nav" class="navlink ">Quiz</a>
         </div>
-        <button class="btn btn-primary" @click="fetchlessons">
-            Fetch lessons
-          </button>
-          <li v-for="lesson in lessons">
-            {{ lesson.title }}  <br>  {{ lesson.description }} <br> {{ lesson.content }}
-          </li>
+
         <div class="steps">
-            
-            
             <!-- FIRST STEP -->
-            
             <div class="step">
                 <div class="step-header">
                     <div class="header">First Step</div>
@@ -45,7 +38,7 @@
                 <div class="step-content two">
                     <div style="margin: 20px 0;"></div>
                     <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4}" placeholder="Lessons Content" v-model="content"></el-input>
-                    <el-upload class="upload-demo relative"  action=""  v-model="img">
+                    <el-upload class="upload-demo relative"  action=""  >
                         <el-button class="upload_position" size="small"  type="primary">Click to upload an image</el-button>
                         <div slot="tip" class="el-upload__tip text-align-right">jpg/png files with a size less than 500kb</div>
                     </el-upload>
@@ -103,7 +96,6 @@
                     title: this.title,
                     description: this.description,
                     content: this.content,
-                    img: this.img
 
                     
                 })

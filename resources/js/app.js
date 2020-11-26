@@ -31,9 +31,13 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('quizzes-component', require('./components/QuizzesComponent.vue').default);
 Vue.component('lessons-component', require('./components/LessonsComponent.vue').default);
 
+
 Vue.component('landing-component', require('./components/LandingComponent.vue').default);
 Vue.component('create-lesson-component', require('./components/CreateLessonComponent.vue').default);
 Vue.component('create-quiz-component', require('./components/CreateQuizComponent.vue').default);
+
+
+
 Vue.component('quiz-component', require('./components/QuizComponent.vue').default);
 Vue.component('lesson-component', require('./components/LessonComponent.vue').default);
 

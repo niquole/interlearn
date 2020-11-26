@@ -24,6 +24,11 @@ class QuizFactory extends Factory
         return [
             'title'=> $this->faker->name,
             'description'=> $this->faker->sentence(5),
+            'option1'=> $this->faker->sentence(3),
+            'option2'=> $this->faker->sentence(4),
+            'option3'=> $this->faker->sentence(4),
+            'option4'=> $this->faker->sentence(2),
+            'selected' => '', 
             'user_id'=> $this->faker->numberBetween(1, 50)
         ];
     }

@@ -24,5 +24,8 @@ Route::middleware('api')->get('/lessons', 'App\Http\Controllers\ApiLessonControl
 Route::middleware('auth:api')->post('/quizzes', 'App\Http\Controllers\ApiQuizController@store');
 Route::middleware('auth:api')->post('/lessons', 'App\Http\Controllers\ApiLessonController@store');
 
+Route::middleware('auth:api')->get('quiz/{id}', 'App\Http\Controllers\ApiQuizController@show');
+Route::middleware('auth:api')->get('lesson/{id}', 'App\Http\Controllers\ApiLessonController@show');
 
+// Route::middleware('api')->get('/quizzes/latest', 'ApiPostsController@latest');
 

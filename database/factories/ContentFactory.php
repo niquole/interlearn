@@ -23,7 +23,6 @@ class ContentFactory extends Factory
     {
         return [
             'content'=> $this->faker->sentence(10),
-            'img'=> $this->faker->sentence(1),
             'lesson_id'=> $this->faker->numberBetween(1, 80)
         ];
     }

@@ -9,8 +9,18 @@ class LessonController extends Controller
     public function index()
     {
         $lesson = Lesson::with(['user'])->GET();
-        return view("lessons",  compact("lesson"));
+        return view("lessons");
         
+    }
+
+    public function show($id)
+    {
+        $lesson = Lesson::where('id', $id)->with(['user'])->orderBy('created_at', 'desc')->first()
+        // => function ($query) {
+            // $query->with(['user'])->orderBy('created_at', 'desc');
+        ;
+
+        return view("lesson", compact("lesson"));
     }
 
 }

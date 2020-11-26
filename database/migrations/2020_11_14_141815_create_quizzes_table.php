@@ -17,6 +17,11 @@ class CreateQuizzesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
+            $table->string('option1');
+            $table->string('option2');
+            $table->string('option3');
+            $table->string('option4');
+            $table->string('selected');
             $table->integer('user_id')->nullable()->unsigned()->index();
             $table->timestamps();
         });
