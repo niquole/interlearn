@@ -24,13 +24,7 @@ html {
       }
       
       
-      img#logo {
-        width: 200px;
-        position: absolute;
-        top: 5px;
-        left: 45%;
-        
-      }
+      
       
       
       
@@ -38,7 +32,7 @@ html {
     
     li {
       a {
-        #create {
+        .create {
           position: absolute;
           left: 5%;
           color: #fff !important;
@@ -71,7 +65,14 @@ html {
       } 
     }
     
-    
+     a.navbar-brand img#logo {
+      width: 200px;
+      position: absolute;
+      left: 45%;
+      top: 5%;
+      // margin-right: 100%;
+      
+    }
     .navbar-expand-md .navbar-nav .nav-link {
       margin-left: 30vw !important;
     }
@@ -92,6 +93,32 @@ html {
       color: black !important;
     }
 
+    .mrgn-top {
+      padding: 20px;
+    }
   
+  }
+}
+
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+  body {
+    img#logo {
+      width: 150px !important;
+    }
+
+    li {
+      a{
+        .create {
+          position: absolute;
+          right: 10px !important;
+          color: #fff !important;
+          background-color: transparent !important;
+          border: 2px solid #FCBF49 !important;
+          padding: 10px 30px;
+          border-radius: 20px;
+        }
+      }
+    }
   }
 }

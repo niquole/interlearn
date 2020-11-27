@@ -15,7 +15,7 @@
                         <p >{{ lesson.description}}</p>
                         <span>{{ lesson.user.name }}</span>
                         
-                        <div id="lesson-link">
+                        <div class="lesson-link">
                             L
                             <br>
                             E

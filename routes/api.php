@@ -13,19 +13,13 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
+// USER ROUTES
 Route::middleware('api')->get('/users', 'App\Http\Controllers\ApiUserController@index');
-Route::middleware('api')->get('/quizzes', 'App\Http\Controllers\ApiQuizController@index');
-Route::middleware('api')->get('/lessons', 'App\Http\Controllers\ApiLessonController@index');
-Route::middleware('auth:api')->post('/quizzes', 'App\Http\Controllers\ApiQuizController@store');
-Route::middleware('auth:api')->post('/lessons', 'App\Http\Controllers\ApiLessonController@store');
 
-Route::middleware('auth:api')->get('quiz/{id}', 'App\Http\Controllers\ApiQuizController@show');
-Route::middleware('auth:api')->get('lesson/{id}', 'App\Http\Controllers\ApiLessonController@show');
+// LESSON ROUTES
+Route::middleware('api')->get('/lessons', 'App\Http\Controllers\ApiLessonController@index'); //showing the view
+Route::middleware('auth:api')->post('/lessons', 'App\Http\Controllers\ApiLessonController@store'); //storing the data
 
-// Route::middleware('api')->get('/quizzes/latest', 'ApiPostsController@latest');
-
+// QUIZ ROUTES
+Route::middleware('api')->get('/quizzes', 'App\Http\Controllers\ApiQuizController@index'); //showing the view
+Route::middleware('auth:api')->post('/quizzes', 'App\Http\Controllers\ApiQuizController@store'); //storing the data

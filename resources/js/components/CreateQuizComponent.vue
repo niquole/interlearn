@@ -2,6 +2,7 @@
   
   <div>
     <!-- NAVIGATION -->
+    <div class="mrgn-top"> </div>
     <div class="navigation">
       <a href="/create-lesson" id="lesson-nav" class="navlink">Lesson</a>
       <a href="/create-quiz" id="quiz-nav" class="navlink active">Quiz</a>

@@ -1,9 +1,6 @@
 div {
-    // width: 20vw;
 
-    // }
     .navigation {
-        // margin: 0 auto;
         text-align: center;
         font-weight: bold;
 
@@ -15,14 +12,7 @@ div {
         }
     }
 
-    // #quiz-nav {
-    //     font-size: 20px;
-    // }
 
-    // #lesson-nav {
-    //     font-size: 20px;
-
-    // }
 
     .active, .navlink:hover {
         font-size: 22px;
@@ -55,11 +45,13 @@ div {
         padding-left: 1%;
         border-radius: 20px;
 
-        #lesson-link {
+        .lesson-link {
             position: absolute;
-            top: 0%;
+            top: 8%;
             right: -32px;
             text-align: center;
+            font-size: 14px;
+            font-weight: bold;
             
         }
     }
@@ -75,12 +67,27 @@ div {
         align-items: flex-end;
 
 
-        #quiz-link {
-            right: -2%;
+        .quiz-link {
             position: absolute;
             top: 20%;
-            // bottom: 10%;
+            right: -32px;
             text-align: center;
+            font-size: 14px;
+            font-weight: bold;
         }
     }
+}
+
+@media (max-width: 1290px) {
+    .lesson-link {
+        font-size: 12px !important;
+        font-weight: bold;
+        // margin: 0 auto;
+    }
+
+    .quiz-link {
+        font-size: 12px !important;
+        font-weight: bold;
+    }
+
 }

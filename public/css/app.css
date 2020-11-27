@@ -10925,14 +10925,7 @@ html body a .nav-brand {
   position: relative;
 }
 
-html body a img#logo {
-  width: 200px;
-  position: absolute;
-  top: 5px;
-  left: 45%;
-}
-
-html body li a #create {
+html body li a .create {
   position: absolute;
   left: 5%;
   color: #fff !important;
@@ -10961,6 +10954,13 @@ html body li a #login-link:hover {
   background-color: #599FA5 !important;
 }
 
+html body a.navbar-brand img#logo {
+  width: 200px;
+  position: absolute;
+  left: 45%;
+  top: 5%;
+}
+
 html body .navbar-expand-md .navbar-nav .nav-link {
   margin-left: 30vw !important;
 }
@@ -10980,6 +10980,26 @@ html body #dropdown-arrow a {
 
 html body #logout {
   color: black !important;
+}
+
+html body .mrgn-top {
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  body img#logo {
+    width: 150px !important;
+  }
+
+  body li a .create {
+    position: absolute;
+    right: 10px !important;
+    color: #fff !important;
+    background-color: transparent !important;
+    border: 2px solid #FCBF49 !important;
+    padding: 10px 30px;
+    border-radius: 20px;
+  }
 }
 
 .forms .form-control {
@@ -11111,11 +11131,13 @@ div .lesson-container {
   border-radius: 20px;
 }
 
-div .lesson-container #lesson-link {
+div .lesson-container .lesson-link {
   position: absolute;
-  top: 0%;
+  top: 8%;
   right: -32px;
   text-align: center;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 div .quiz-container {
@@ -11129,11 +11151,25 @@ div .quiz-container {
   align-items: flex-end;
 }
 
-div .quiz-container #quiz-link {
-  right: -2%;
+div .quiz-container .quiz-link {
   position: absolute;
   top: 20%;
+  right: -32px;
   text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@media (max-width: 1290px) {
+  .lesson-link {
+    font-size: 12px !important;
+    font-weight: bold;
+  }
+
+  .quiz-link {
+    font-size: 12px !important;
+    font-weight: bold;
+  }
 }
 
 .steps {

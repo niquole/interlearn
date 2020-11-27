@@ -2,11 +2,12 @@
     
     <div>
         <!-- NAVIGATION -->
+        <div class="mrgn-top"> </div>
         <div class="navigation">
             <a href="/create-lesson" id="lesson-nav" class="navlink active">Lesson</a>
             <a href="/create-quiz" id="quiz-nav" class="navlink ">Quiz</a>
         </div>
-
+        
         <div class="steps">
             <!-- FIRST STEP -->
             <div class="step">
@@ -96,7 +97,7 @@
                     title: this.title,
                     description: this.description,
                     content: this.content,
-
+                    
                     
                 })
                 .then((response) => {

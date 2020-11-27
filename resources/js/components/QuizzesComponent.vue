@@ -13,7 +13,7 @@
                             <h4>{{ quiz.title }}</h4>
                             <p >{{ quiz.description }}</p>
                             <span>{{ quiz.user.name }}</span>
-                            <div id="quiz-link">
+                            <div class="quiz-link">
                                 Q
                                 <br>
                                 U

@@ -2037,6 +2037,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2136,6 +2137,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -2496,17 +2498,73 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["dataquiz"],
   data: function data() {
     return {
-      quiz: {}
+      quiz: {
+        title: '',
+        description: '',
+        option1: '',
+        option2: '',
+        option3: '',
+        option4: ''
+      }
     };
   },
   mounted: function mounted() {
-    this.quiz = JSON.parse(this.dataquiz); // console.log(this.quiz);
+    this.quiz = JSON.parse(this.dataquiz);
+    console.log(this.quiz.selected);
   },
-  methods: {}
+  methods: {
+    is_option1_right: function is_option1_right() {
+      if (this.quiz.selected === 'option1') {
+        alert('corect!!!');
+      } else {
+        alert('Wrong! try again!');
+      }
+    },
+    is_option2_right: function is_option2_right() {
+      if (this.quiz.selected === 'option2') {
+        alert('corect!!!');
+      } else {
+        alert('Wrong! try again!');
+      }
+    },
+    is_option3_right: function is_option3_right() {
+      if (this.quiz.selected === 'option3') {
+        alert('corect!!!');
+      } else {
+        alert('Wrong! try again!');
+      }
+    },
+    is_option4_right: function is_option4_right() {
+      if (this.quiz.selected === 'option4') {
+        alert('corect!!!');
+      } else {
+        alert('Wrong! try again!');
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -100618,6 +100676,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _c("div", { staticClass: "mrgn-top" }),
+    _vm._v(" "),
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "steps" }, [
@@ -100830,6 +100890,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _c("div", { staticClass: "mrgn-top" }),
+    _vm._v(" "),
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "steps" }, [
@@ -101269,7 +101331,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "lesson-link" } }, [
+    return _c("div", { staticClass: "lesson-link" }, [
       _vm._v("\n                            L\n                            "),
       _c("br"),
       _vm._v("\n                            E\n                            "),
@@ -101333,15 +101395,50 @@ var render = function() {
                 "\n                "
             )
           ]),
+          _vm._v(
+            "\n                 by: " +
+              _vm._s(_vm.quiz.user.name) +
+              "\n                "
+          ),
+          _c("br"),
           _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "btn btn-outline card-link mt-3 ",
-              attrs: { href: "" }
-            },
-            [_vm._v(" " + _vm._s(_vm.quiz.user) + " ")]
-          )
+          _c("br"),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "ul",
+              [
+                _c("el-button", { on: { click: _vm.is_option1_right } }, [
+                  _vm._v(_vm._s(_vm.quiz.option1))
+                ]),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("el-button", { on: { click: _vm.is_option2_right } }, [
+                  _vm._v(_vm._s(_vm.quiz.option2))
+                ]),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("el-button", { on: { click: _vm.is_option3_right } }, [
+                  _vm._v(_vm._s(_vm.quiz.option3))
+                ]),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("el-button", { on: { click: _vm.is_option4_right } }, [
+                  _vm._v(_vm._s(_vm.quiz.option4))
+                ])
+              ],
+              1
+            )
+          ])
         ])
       ])
     ])
@@ -101429,7 +101526,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "quiz-link" } }, [
+    return _c("div", { staticClass: "quiz-link" }, [
       _vm._v("\n                            Q\n                            "),
       _c("br"),
       _vm._v("\n                            U\n                            "),

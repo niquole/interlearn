@@ -31,7 +31,7 @@
             <div class="container">
                 <a class="navbar-brand " href="{{ url('/lessons') }}">
                     <!-- {{ config('app.name', 'InterLearn') }} -->
-                    <img src="./images/logo.png" alt="" id="logo" class="">
+                    <img src="../images/logo.png" alt="" id="logo" class="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -50,7 +50,7 @@
                         @if (Route::has('login'))
                         <li class="nav-item">
                             <a  class="nav-link" href="{{ route('login') }}">                                    
-                                <button id="create" >{{ __('Create') }}</button></a>
+                                <button class="create" >{{ __('Create') }}</button></a>
                             </li>
                             @endif
                             
@@ -64,7 +64,7 @@
                                 @else
                                 <li class="nav-item">
                                     <a  class="nav-link" href="/create-lesson">                                    
-                                        <button id="create" >{{ __('Create') }}</button></a>
+                                        <button class="create" >{{ __('Create') }}</button></a>
                                         
                                     </li>
                                     
