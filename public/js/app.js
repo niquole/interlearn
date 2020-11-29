@@ -2038,6 +2038,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -100770,7 +100790,11 @@ var render = function() {
                     attrs: { slot: "tip" },
                     slot: "tip"
                   },
-                  [_vm._v("jpg/png files with a size less than 500kb")]
+                  [
+                    _vm._v(
+                      "This image will not appear to the actual end product (this is a sample)"
+                    )
+                  ]
                 )
               ],
               1
@@ -100788,20 +100812,67 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "step minimized" }, [
+      _c("div", { staticClass: "step minimized", attrs: { id: "thirdstep" } }, [
         _vm._m(3),
         _vm._v(" "),
         _c("div", { staticClass: "step-content three" }, [
           _c(
             "button",
-            { staticClass: "close-btn", on: { click: _vm.addlesson } },
+            { staticClass: "done-btn", on: { click: _vm.addlesson } },
             [_vm._v("Done")]
           ),
           _vm._v(" "),
-          _vm.submitting ? _c("p", [_vm._v("Submitting...")]) : _vm._e(),
+          _vm.submitting
+            ? _c(
+                "p",
+                [
+                  _c(
+                    "el-button",
+                    {
+                      staticClass: "submiting-btn",
+                      attrs: { type: "primary", loading: true }
+                    },
+                    [_vm._v("Submiting")]
+                  )
+                ],
+                1
+              )
+            : _vm._e(),
           _vm._v(" "),
-          _vm.loading ? _c("p", [_vm._v("Loading...")]) : _vm._e()
-        ])
+          _vm.loading
+            ? _c(
+                "p",
+                [
+                  _c("el-button", { attrs: { type: "primary" } }, [
+                    _vm._v("Loading")
+                  ])
+                ],
+                1
+              )
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "afterdone" } }, [
+          _vm._v(
+            "\n                    After you submit your lesson you can find it on the Lessons page!\n                "
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          { attrs: { href: "/lessons" } },
+          [
+            _c(
+              "el-button",
+              { staticClass: "go-to-created", attrs: { type: "primary" } },
+              [
+                _vm._v("Go to lessons page"),
+                _c("i", { staticClass: "el-icon-arrow-right el-icon-right" })
+              ]
+            )
+          ],
+          1
+        )
       ])
     ])
   ])
@@ -100836,10 +100907,12 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "step-header" }, [
-      _c("div", { staticClass: "header" }, [_vm._v("First Step")]),
+      _c("div", { staticClass: "header" }, [_c("h3", [_vm._v("First Step")])]),
       _vm._v(" "),
       _c("div", { staticClass: "subheader" }, [
-        _vm._v("Please determine your lessons Title and Description")
+        _vm._v(
+          'Please determine your lessons Title and Description on the following inputs, when you are positive about the fields please click the "NEXT" button to add the content'
+        )
       ])
     ])
   },
@@ -100848,10 +100921,12 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "step-header" }, [
-      _c("div", { staticClass: "header" }, [_vm._v("Second Step")]),
+      _c("div", { staticClass: "header" }, [_c("h3", [_vm._v("Second Step")])]),
       _vm._v(" "),
       _c("div", { staticClass: "subheader" }, [
-        _vm._v("Add a title, content and an image!")
+        _vm._v(
+          'Add the lessons content and an image. When you are happy with the content please click the "NEXT" button'
+        )
       ])
     ])
   },
@@ -100860,10 +100935,16 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "step-header" }, [
-      _c("div", { staticClass: "header" }, [_vm._v("And finally step three!")]),
+      _c("div", { staticClass: "header" }, [_c("h3", [_vm._v("Final Step")])]),
       _vm._v(" "),
       _c("div", { staticClass: "subheader" }, [
-        _vm._v("Last but not the least!")
+        _vm._v(
+          "This is a checking point, please make sure that all your wished content is added, you can go back to check by clicking on the step headers. \n                    "
+        ),
+        _c("br"),
+        _vm._v(
+          '\n                    When you are ready click the "DONE" button to upload your lesson!'
+        )
       ])
     ])
   }

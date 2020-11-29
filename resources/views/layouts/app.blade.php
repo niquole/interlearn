@@ -50,7 +50,7 @@
                         @if (Route::has('login'))
                         <li class="nav-item">
                             <a  class="nav-link" href="{{ route('login') }}">                                    
-                                <button class="create" >{{ __('Create') }}</button></a>
+                                <button class="create" >{{ __('Create') }}!</button></a>
                             </li>
                             @endif
                             
@@ -58,13 +58,13 @@
                             
                             <li class="nav-item" >
                                 <a  class="nav-link"  href="{{ route('login') }}">
-                                    <button id="login-link">{{ __('Login') }}</button></a>
+                                    <button class="login-link">{{ __('Login') }}</button></a>
                                 </li>
                                 @endif
                                 @else
                                 <li class="nav-item">
                                     <a  class="nav-link" href="/create-lesson">                                    
-                                        <button class="create" >{{ __('Create') }}</button></a>
+                                        <button class="create" >{{ __('Create') }}!</button></a>
                                         
                                     </li>
                                     

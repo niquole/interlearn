@@ -94,7 +94,7 @@
 }
 
 .step-content.one {
-  height: 30vh;
+  height: 20vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 4x;
@@ -102,7 +102,7 @@
 }
 
 .step-content.two {
-  height: 30vh;
+  height: 35vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
@@ -110,7 +110,7 @@
 }
 
 .step-content.three {
-  height: 30vh;
+  height: 15vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
@@ -134,7 +134,7 @@
 
 .close-btn {
   position: absolute;
-  top: 80%;
+  top: 50%;
   left: 50%;
   border: 0;
   padding: 10px 20px;
@@ -180,5 +180,46 @@
 
 .text-align-right {
   padding-top: 40px;
+  text-align: center;
+}
+
+.go-to-created {
+  position: absolute;
+  margin-top: 50px !important;
+  top: 85%;
+  left: 51%;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #599FA5;
+  box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
+  color: #FFF;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.done-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #9269C7;
+  box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
+  color: #FFF;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.submiting-btn {
+  position: absolute;
+  top: 50%;
+  left: 43%;
+}
+
+#afterdone {
   text-align: center;
 }
