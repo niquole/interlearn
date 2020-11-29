@@ -9,6 +9,21 @@
             <li><a href="/quizzes" class="menu__item">Quizzes</a></li>
             <li><a href="/create-lesson" class="menu__item">Create a Lesson</a></li>
             <li><a href="/create-quiz" class="menu__item">Create a Quiz</a></li>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <li><a href="/login" class="menu__item">Login</a></li>
+            <li><a href="/register" class="menu__item">Register</a></li>
+
         </ul>
     </div>
 </template>
@@ -29,3 +44,10 @@
         }
     }
 </script>
+
+<style scoped>
+div {
+    font-size: 20px;
+    font-weight: 100;
+}
+</style>

@@ -95,22 +95,19 @@ html {
 
 
 
-@media (max-width: 1290px) {
+@media (max-width: 1300px) {
   body {
     img#logo {
       width: 150px !important;
     }
 
+    .login-link {
+      display: none;
+    }
     li {
       a{
         .create {
-          position: absolute;
-          right: 10px !important;
-          color: #fff !important;
-          background-color: transparent !important;
-          border: 2px solid #FCBF49 !important;
-          padding: 10px 30px;
-          border-radius: 20px;
+          display: none;
         }
       }
     }

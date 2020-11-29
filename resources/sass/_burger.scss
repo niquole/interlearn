@@ -1,7 +1,7 @@
 $viewport_size: (
     s: 320px,
-    m: 766px,
-    l: 766px
+    m: 800px,
+    l: 1300px
 );
 
 
@@ -124,7 +124,7 @@ ul {
   }
 }
 
-@media (max-width: 766px) {
+@media (max-width: 1300px) {
 
 	.lesson-link {
 		position: absolute;
@@ -140,7 +140,7 @@ ul {
 }
 }
 
-@media (max-width: 1260px) {
+@media (max-width: 1300px) {
 
 	.lesson-link {
 		position: absolute;

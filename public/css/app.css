@@ -10993,19 +10993,17 @@ html body .mrgn-top {
   padding: 20px;
 }
 
-@media (max-width: 1290px) {
+@media (max-width: 1300px) {
   body img#logo {
     width: 150px !important;
   }
 
+  body .login-link {
+    display: none;
+  }
+
   body li a .create {
-    position: absolute;
-    right: 10px !important;
-    color: #fff !important;
-    background-color: transparent !important;
-    border: 2px solid #FCBF49 !important;
-    padding: 10px 30px;
-    border-radius: 20px;
+    display: none;
   }
 }
 
@@ -11549,7 +11547,7 @@ ul {
   padding: 25px 0;
 }
 
-@media (min-width: 766px) {
+@media (min-width: 1300px) {
   .mobile {
     display: none;
   }
@@ -11561,7 +11559,7 @@ ul {
   }
 }
 
-@media (max-width: 766px) {
+@media (max-width: 1300px) {
   .lesson-link {
     position: absolute;
     top: 5% !important;
@@ -11576,7 +11574,7 @@ ul {
   }
 }
 
-@media (max-width: 1260px) {
+@media (max-width: 1300px) {
   .lesson-link {
     position: absolute;
     top: 2% !important;
