@@ -2,6 +2,8 @@
 
 @section('content')
 
-<lessons-component></lessons-component>
+    <burger-menu-component></burger-menu-component>
+    <lessons-component></lessons-component>
+    <footer-component></footer-component>
 
 @endsection

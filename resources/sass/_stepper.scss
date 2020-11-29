@@ -132,14 +132,30 @@
   transform: translate(-50%, -50%);
 }
 
-.close-btn {
+.next-btn-quiz {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #FCBF49;
+  box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
+  color: #FFF;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+} 
+
+
+.close-btn-lesson {
   position: absolute;
   top: 50%;
   left: 50%;
   border: 0;
   padding: 10px 20px;
   border-radius: 4px;
-  background-color: #9269C7;
+  background-color: #599FA5;
   box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
   color: #FFF;
   transition: background-color 0.3s ease-in-out;
@@ -148,21 +164,34 @@
 }
 
 /* Irrelevant styling things */
-.close-btn:hover {
-  background-color: #C699FF;
+.done-btn:hover {
+  background-color: #62e969;
 }
 
-.close-btn:focus {
+.close-btn-lesson:focus {
   outline: 0;
 }
 
-.next-btn:hover {
-  background-color: #7CD7DF;
+.next-btn-lesson:hover {
+  background-color:#35aeff;
 }
 
-.next-btn:focus {
+.next-btn-lesson:focus {
   outline: 0;
 }
+
+.close-btn-quiz:focus {
+  outline: 0;
+}
+
+.next-btn-quiz:hover {
+  background-color:rgb(211, 156, 48);
+}
+
+.next-btn-quiz:focus {
+  outline: 0;
+}
+
 
 .step.minimized:hover {
   background-color: rgba(0, 0, 0, 0.06);
@@ -206,7 +235,7 @@
   border: 0;
   padding: 10px 20px;
   border-radius: 4px;
-  background-color: #9269C7;
+  background-color: #23c02b;
   box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
   color: #FFF;
   transition: background-color 0.3s ease-in-out;
@@ -222,4 +251,12 @@
 
 #afterdone {
   text-align: center;
+}
+
+.lesson-step-color {
+  color: #599FA5;
+}
+
+.quiz-step-color {
+  color: #FCBF49;
 }

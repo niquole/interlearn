@@ -10928,7 +10928,7 @@ html body a .nav-brand {
 html body li a .create {
   position: absolute;
   right: 10%;
-  top: 150%;
+  margin-top: 3%;
   color: #fff !important;
   background-color: transparent !important;
   border: 2px solid #FCBF49 !important;
@@ -10964,7 +10964,7 @@ html body li a .login-link:hover {
 html body a.navbar-brand img#logo {
   width: 200px;
   position: absolute;
-  left: 45%;
+  left: 45.4%;
   top: 5%;
 }
 
@@ -10993,7 +10993,7 @@ html body .mrgn-top {
   padding: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1290px) {
   body img#logo {
     width: 150px !important;
   }
@@ -11097,23 +11097,37 @@ html body .mrgn-top {
 }
 
 div .navigation {
-  text-align: center;
+  position: absolute;
+  left: 45.8%;
   font-weight: bold;
 }
 
+div .navigation a:first-of-type {
+  margin-right: 10px;
+}
+
 div .navigation a:nth-of-type(2) {
-  margin-left: 20px;
+  margin-left: 10px;
   padding-bottom: 0px;
   padding-top: 0px;
 }
 
+div #lesson-nav {
+  font-size: 20px;
+}
+
+div #quiz-nav {
+  font-size: 20px;
+}
+
 div .active,
 div .navlink:hover {
-  font-size: 22px;
+  font-size: 26px !important;
 }
 
 div .active {
   text-decoration: underline;
+  font-size: 26px !important;
 }
 
 div .margin-top-container {
@@ -11165,18 +11179,6 @@ div .quiz-container .quiz-link {
   text-align: center;
   font-size: 14px;
   font-weight: bold;
-}
-
-@media (max-width: 1290px) {
-  .lesson-link {
-    font-size: 12px !important;
-    font-weight: bold;
-  }
-
-  .quiz-link {
-    font-size: 12px !important;
-    font-weight: bold;
-  }
 }
 
 .steps {
@@ -11317,14 +11319,29 @@ div .quiz-container .quiz-link {
   transform: translate(-50%, -50%);
 }
 
-.close-btn {
+.next-btn-quiz {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #FCBF49;
+  box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
+  color: #FFF;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.close-btn-lesson {
   position: absolute;
   top: 50%;
   left: 50%;
   border: 0;
   padding: 10px 20px;
   border-radius: 4px;
-  background-color: #9269C7;
+  background-color: #599FA5;
   box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
   color: #FFF;
   transition: background-color 0.3s ease-in-out;
@@ -11334,19 +11351,31 @@ div .quiz-container .quiz-link {
 
 /* Irrelevant styling things */
 
-.close-btn:hover {
-  background-color: #C699FF;
+.done-btn:hover {
+  background-color: #62e969;
 }
 
-.close-btn:focus {
+.close-btn-lesson:focus {
   outline: 0;
 }
 
-.next-btn:hover {
-  background-color: #7CD7DF;
+.next-btn-lesson:hover {
+  background-color: #35aeff;
 }
 
-.next-btn:focus {
+.next-btn-lesson:focus {
+  outline: 0;
+}
+
+.close-btn-quiz:focus {
+  outline: 0;
+}
+
+.next-btn-quiz:hover {
+  background-color: #d39c30;
+}
+
+.next-btn-quiz:focus {
   outline: 0;
 }
 
@@ -11391,7 +11420,7 @@ div .quiz-container .quiz-link {
   border: 0;
   padding: 10px 20px;
   border-radius: 4px;
-  background-color: #9269C7;
+  background-color: #23c02b;
   box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.3);
   color: #FFF;
   transition: background-color 0.3s ease-in-out;
@@ -11407,5 +11436,154 @@ div .quiz-container .quiz-link {
 
 #afterdone {
   text-align: center;
+}
+
+.lesson-step-color {
+  color: #599FA5;
+}
+
+.quiz-step-color {
+  color: #FCBF49;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.desktop {
+  display: none;
+}
+
+.menu__icon {
+  height: 32px;
+  width: 43px;
+  margin: 3%;
+  position: absolute;
+  top: 10px;
+  right: 3%;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 20;
+}
+
+.menu__icon span {
+  display: block;
+  background: #fff;
+  width: 100%;
+  height: 4px;
+  margin-top: -2px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.menu__icon:before,
+.menu__icon:after {
+  content: "";
+  display: block;
+  background: #fff;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  transform-origin: center center;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.menu__icon:before {
+  top: 2px;
+  margin-top: -2px;
+}
+
+.menu__icon:after {
+  bottom: 2px;
+  margin-bottom: -2px;
+}
+
+.menu_shown .menu__icon span {
+  background: transparent;
+}
+
+.menu_shown .menu__icon:before {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.menu_shown .menu__icon:after {
+  bottom: 50%;
+  transform: rotate(-45deg);
+}
+
+.mobile.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 112px;
+  background: #599FA5;
+  z-index: 10;
+  transition: all 0.4s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.menu_shown .mobile.menu {
+  transform: translateX(0);
+}
+
+.mobile .menu__item {
+  display: block;
+  line-height: 2;
+  padding: 25px 0;
+}
+
+@media (min-width: 766px) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 766px) {
+  .lesson-link {
+    position: absolute;
+    top: 5% !important;
+    right: -20px;
+    text-align: center;
+    font-size: 12px !important;
+    font-weight: bold;
+  }
+
+  .navigation {
+    display: none;
+  }
+}
+
+@media (max-width: 1260px) {
+  .lesson-link {
+    position: absolute;
+    top: 2% !important;
+    right: -20px;
+    text-align: center;
+    font-size: 12px !important;
+    font-weight: bold;
+  }
 }
 

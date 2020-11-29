@@ -2,9 +2,10 @@
     <div class="margin-top-container">
         <div class="navigation">
             <a href="/lessons" id="lesson-nav" class="navlink active">Lessons</a>
+            |
             <a href="/quizzes" id="quiz-nav" class="navlink ">Quizzes</a>
-            
         </div>
+        <div class="mrgn-top"></div>
         <div  class="margin-top-container">
             <div v-for="lesson in lessons" :key="lesson.id">
                 <a class="link" :href="'/lesson/' + lesson.id">

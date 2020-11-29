@@ -1,10 +1,14 @@
 <template>
-
+    
     <div class="margin-top-container">
+
+        <!-- NORMAL NAV  -->
         <div class="navigation">
             <a href="/lessons" id="lesson-nav" class="navlink">Lessons</a>
+            |
             <a href="/quizzes" id="quiz-nav" class="navlink active ">Quizzes</a>
         </div>
+        <div class="mrgn-top"></div>
         <div  class="margin-top-container">
             <div v-for="quiz in quizzes" :key="quiz.id">
                 <a class="link" :href="'/quiz/' + quiz.id">
@@ -41,6 +45,7 @@
             }
         },
         mounted() {
+            // other
             var navlinks = document.getElementsByClassName("navlink");
             
             for (var i = 0; i < navlinks.length; i++) {

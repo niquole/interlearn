@@ -42,6 +42,11 @@ Vue.component('quiz-component', require('./components/QuizComponent.vue').defaul
 Vue.component('lesson-component', require('./components/LessonComponent.vue').default);
 
 
+Vue.component('burger-menu-component', require('./components/BurgerMenuComponent.vue').default);
+Vue.component('footer-component', require('./components/FooterComponent.vue').default);
+
+
+
 
 
 

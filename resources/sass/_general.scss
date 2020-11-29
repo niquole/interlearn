@@ -7,27 +7,16 @@ html {
     padding: 0;
     color: #fff;
     background-color: #131313;
-    
     a {
       text-decoration: none;
       color: #fff !important;
       transition: 0.3s !important;
-
-      
       :hover {
       color: #fff !important;
-
       }
       .nav-brand {
         position: relative;
-        
       }
-      
-      
-      
-      
-      
-      
     }
     
     li {
@@ -35,9 +24,7 @@ html {
         .create {
           position: absolute;
           right: 10%;
-          // bottom: 0%;
-          top: 150%;
-          // left: 5%;
+          margin-top: 3%;
           color: #fff !important;
           background-color: transparent !important;
           border: 2px solid #FCBF49 !important;
@@ -50,12 +37,10 @@ html {
         
         .create:hover {
           background-color: #FCBF49 !important;
-          // color: #131313 !important;
         }
         
         .login-link {
           position: absolute;
-          // margin-top: 4.2%;
           right: 2%;
           background-color: transparent !important;
           font-size: large;
@@ -67,21 +52,17 @@ html {
           border-radius: 15px;
           color: #fff;
         }
-        
         .login-link:hover {
           background-color: #599FA5 !important;
           
         }
       } 
     }
-    
      a.navbar-brand img#logo {
       width: 200px;
       position: absolute;
-      left: 45%;
+      left: 45.4%;
       top: 5%;
-      // margin-right: 100%;
-      
     }
     .navbar-expand-md .navbar-nav .nav-link {
       margin-left: 30vw !important;
@@ -106,12 +87,15 @@ html {
     .mrgn-top {
       padding: 20px;
     }
-  
+
+    
   }
 }
 
-$breakpoint-tablet: 768px;
-@media (max-width: $breakpoint-tablet) {
+
+
+
+@media (max-width: 1290px) {
   body {
     img#logo {
       width: 150px !important;
