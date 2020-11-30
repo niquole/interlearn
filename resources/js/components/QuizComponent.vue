@@ -6,7 +6,7 @@
 
                     <a :href="'/quiz/' + quiz.id" class="card-title">
                         <h1 class="quiz-titl">
-                            {{quiz.title}}
+                            {{quiz.title}} (Quiz)
                         </h1>
                     </a>
 
