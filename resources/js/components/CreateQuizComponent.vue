@@ -1,6 +1,5 @@
 <template>
   <div>
-  </nav>
   <!-- NAVIGATION -->
   <div class="mrgn-top"> </div>
   <div class="navigation">
@@ -16,13 +15,13 @@
         <div class="header">
           <h3 class="quiz-step-color">First Step</h3>
         </div>
-        <div class="subheader">Please determine your lessons Title and Description</div>
+        <div class="subheader">Please determine your Quizzes question and description if needed, when you are ready click the "NEXT" button to go to the next step</div>
       </div>
       
       <div class="step-content one">
-        <el-input type="textarea" autosize placeholder="Title" v-model="title"></el-input>
+        <el-input type="textarea" autosize placeholder="Question" v-model="title"></el-input>
         <div style="margin: 20px 0;"></div>
-        <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4}" placeholder="description" v-model="description"></el-input>
+        <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4}" placeholder="description" v-model="Description"></el-input>
         
         <!-- button -->
         <button  type="button" class="next-btn-quiz">Next</button>
@@ -35,7 +34,10 @@
         <div class="header">
           <h3 class="quiz-step-color">Second Step</h3>
         </div>
-        <div class="subheader">Add a title, content and an image!</div>
+        <div class="subheader">Add 4 options as possible answers to your question by clicking the input and typing. Later pick the right option by cliking the little circle (it should be blue afterwards)
+          <br>
+          When you are ready please move to the next and final step.
+        </div>
       </div>
       
       
@@ -73,7 +75,10 @@
         <div class="header">
           <h3 class="quiz-step-color">Final Step</h3>
         </div>
-        <div class="subheader">Last but not the least!</div>
+        <div class="subheader">This is a checking point, please make sure that all your wished content is added, you can go back to check by clicking on the step headers.
+          <br>
+          When you are confident with your quiz please click the "DONE" button to submit your quiz.
+        </div>
       </div>
       
       <div class="step-content three" >

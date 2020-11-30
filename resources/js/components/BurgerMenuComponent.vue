@@ -16,11 +16,6 @@
             <br>
             <br>
             <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
             <li><a href="/login" class="menu__item">Login</a></li>
             <li><a href="/register" class="menu__item">Register</a></li>
 

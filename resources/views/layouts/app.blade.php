@@ -31,7 +31,7 @@
             <div class="container">
                 <a class="navbar-brand " href="{{ url('/lessons') }}">
                     <!-- {{ config('app.name', 'InterLearn') }} -->
-                    <img src="https://i.ibb.co/Czj0Gz1/logo.png" alt="" id="logo" class="">
+                    <img src="https://i.ibb.co/zXTvSQw/logo.png" alt="" id="logo" class="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
