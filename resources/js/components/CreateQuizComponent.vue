@@ -1,50 +1,39 @@
 <template>
-  <div>
-  <!-- NAVIGATION -->
-  <div class="mrgn-top"> </div>
-  <div class="navigation">
-    <a href="/create-lesson" id="lesson-nav" class="navlink">Lesson</a>
-    |
-    <a href="/create-quiz" id="quiz-nav" class="navlink active">Quiz</a>
-  </div>
-  <div class="mrgn-top"></div>
-  <div class="steps">
-    <!-- FIRST STEP -->
-    <div class="step">
-      <div class="step-header">
-        <div class="header">
-          <h3 class="quiz-step-color">First Step</h3>
-        </div>
-        <div class="subheader">Please determine your Quizzes question and description if needed, when you are ready click the "NEXT" button to go to the next step</div>
-      </div>
-      
-      <div class="step-content one">
-        <el-input type="textarea" autosize placeholder="Question" v-model="title"></el-input>
-        <div style="margin: 20px 0;"></div>
-        <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4}" placeholder="description" v-model="Description"></el-input>
-        
-        <!-- button -->
-        <button  type="button" class="next-btn-quiz">Next</button>
-      </div>
+  <div class="stepper">
+    <!-- NAVIGATION  -->
+    <div class="mrgn-top"> </div>
+    <div class="navigation">
+      <a href="/create-lesson" id="lesson-nav" class="navlink">Lesson</a>
+      |
+      <a href="/create-quiz" id="quiz-nav" class="navlink active">Quiz</a>
     </div>
-    <div class="step minimized"> <!--minimize step-->
-      
-      <!-- SECOND STEP -->
-      <div class="step-header">
-        <div class="header">
-          <h3 class="quiz-step-color">Second Step</h3>
-        </div>
-        <div class="subheader">Add 4 options as possible answers to your question by clicking the input and typing. Later pick the right option by cliking the little circle (it should be blue afterwards)
-          <br>
-          When you are ready please move to the next and final step.
-        </div>
-      </div>
-      
-      
-      <div class="step-content two">
-        <div style="margin: 20px 0;"></div>
-        <br>
-        
+    <div class="mrgn-top"></div>
+    <div class="mrgn-top"> </div>
+
+    <!-- END OF NAV -->
+    
+    <!-- STEPPER -->
+    <el-steps :active="active">
+      <el-step title="Step 1"></el-step>
+      <el-step title="Step 2"></el-step>
+      <el-step title="Step 3"></el-step>
+    </el-steps>
+    
+    <!-- STEP 1 CONTENT -->
+    <el-form v-if="active===1">
+      <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4}" placeholder="Question" v-model="title"></el-input>
+      <br>
+      <br>
+
+      <el-input type="textarea" :autosize="{ minRows: 3, maxRows: 4}" placeholder="Description" v-model="description"></el-input>
+    <el-button  style="margin-top: 12px;" @click="next" >Next step</el-button>
+
+    </el-form>
+
+
+    <!-- STEP 2 CONTENT -->
+    <el-form  v-if="active===2">
+      <div class="center-radio">
         <el-radio v-model="selected" label="option1">
           <el-input v-model="option1"></el-input>
         </el-radio>
@@ -63,49 +52,30 @@
         <el-radio v-model="selected" label="option4">
           <el-input v-model="option4"></el-input>
         </el-radio>
-        <br>
-        <button class="next-btn-quiz" type="button">Next</button>
       </div>
-    </div>
-    
-    
-    <!-- THIRD STEP  -->
-    <div class="step minimized"> <!--minimize step-->
-      <div class="step-header">
-        <div class="header">
-          <h3 class="quiz-step-color">Final Step</h3>
-        </div>
-        <div class="subheader">This is a checking point, please make sure that all your wished content is added, you can go back to check by clicking on the step headers.
-          <br>
-          When you are confident with your quiz please click the "DONE" button to submit your quiz.
-        </div>
-      </div>
-      
-      <div class="step-content three" >
-        <button class="done-btn" @click="addquiz">Done</button>
-        <p v-if="submitting">
-          <el-button class="submiting-btn" type="primary" :loading="true">Submiting</el-button>
-        </p>
-        <p v-if="loading">
-          <el-button type="primary">Loading</el-button>
-        </p>
-        
-      </div>
-      <div id="afterdone">
-        After you submit your quiz you can find it on the Quizzes page!
-      </div>
-      <a href="/quizzes">
-        <el-button type="primary" class="go-to-created">Go to quizzes page<i class="el-icon-arrow-right el-icon-right"></i></el-button>
-      </a>
-    </div>
-  </div>
-</div>
+      <br>
+    <el-button  style="margin-top: 12px;" @click="gotofirst" >Previous step</el-button>
+    <el-button  style="margin-top: 12px;" @click="next" >Next step</el-button>
+    </el-form>
 
+
+    <!-- STEP 3 CONTENT -->
+    <el-form v-if="active===3">
+    <el-button  style="margin-top: 12px;" @click="gotosecond" >Previous step</el-button>
+    <el-button  style="margin-top: 12px;" @click="addquiz" >Done</el-button>
+    </el-form>
+
+    
+    
+  </div>
 </template>
+
+
 <script>
   export default {
     data() {
       return {
+        active: 1,
         quizzes: [],
         selected: '',
         option1: '',
@@ -115,10 +85,21 @@
         loading: false,
         submitting: false,
         title: '',
-        description: ''
-      }
+        description: '',
+      };
     },
+    
     methods: {
+      // Stepper 
+      next() {
+        if (this.active++ > 2) this.active = 1;
+      },
+      gotofirst() {
+        if (this.active++ > 1) this.active = 1;
+      },
+      gotosecond() {
+        if (this.active++ > 1) this.active = 2;
+      },
       fetchquizzes() {
         this.loading = true;
         this.quizzes = [];
@@ -152,58 +133,58 @@
           this.option3 = '';
           this.option4 = '';
           this.submitting = false;
+        window.location.replace("/quizzes" )
         });
       }
+        
     },
     mounted() {
       
-      // STEPPER 
-      let curOpen;
-      
-      $(document).ready(function() {
-        curOpen = $('.step')[0];
-        
-        $('.next-btn-quiz').on('click', function() {
-          let cur = $(this).closest('.step');
-          let next = $(cur).next();
-          $(cur).addClass('minimized');
-          setTimeout(function() {
-            $(next).removeClass('minimized');
-            curOpen = $(next);
-          }, 400);
-        });
-        
-        $('.close-btn-quiz').on('click', function() {
-          let cur = $(this).closest('.step');
-          $(cur).addClass('minimized');
-          curOpen = null;
-        });
-        
-        $('.step .step-content').on('click' ,function(e) {
-          e.stopPropagation();
-        });
-        
-        $('.step').on('click', function() {
-          if (!$(this).hasClass("minimized")) {
-            curOpen = null;
-            $(this).addClass('minimized');
-          }
-          else {
-            let next = $(this);
-            if (curOpen === null) {
-              curOpen = next;
-              $(curOpen).removeClass('minimized');
-            }
-            else {
-              $(curOpen).addClass('minimized');
-              setTimeout(function() {
-                $(next).removeClass('minimized');
-                curOpen = $(next);
-              }, 300);
-            }
-          }
-        });
-      })
     }
   }
 </script>
+
+<style>
+  .stepper {
+    width: 70vw;
+    margin: 0 auto;
+  }
+
+  .center-radio {
+    position: relative;
+    left: 23%;
+    width: 50vw !important; 
+
+  }
+
+  .el-input {
+    width: 35vw;
+    margin: 0 auto;
+    
+
+  }
+
+  .el-input__inner {
+    background-color: transparent !important;
+    border-radius: 20px;
+  }
+
+  .el-textarea__inner {
+    background-color: transparent !important;
+    border-radius: 20px;
+  }
+
+  .el-step__title {
+    font-size: 20px;
+    margin-bottom: 5%;
+  }
+
+  .el-step__title.is-finish {
+    color:rgb(181, 134, 189);
+  }
+
+  .el-step__head.is-finish {
+    color: rgb(237, 137, 255);
+    border-color:rgb(181, 134, 189);
+  }
+</style>

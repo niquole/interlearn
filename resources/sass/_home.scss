@@ -1,5 +1,4 @@
 div {
-    
     .navigation {
         position: absolute;
         left: 45.8%;
@@ -7,16 +6,14 @@ div {
         
         a:first-of-type {
             margin-right: 10px;
-            
         }
+
         a:nth-of-type(2) {
             margin-left: 10px;
             padding-bottom: 0px;
             padding-top: 0px;
-            
         }
     }
-    
     
     #lesson-nav {
        font-size: 20px;
@@ -25,29 +22,27 @@ div {
     #quiz-nav {
         font-size: 20px;
      }
+
     .active, .navlink:hover {
         font-size: 26px !important;
-        
     }
     
     .active {
         text-decoration: underline;
         font-size: 26px !important;
-
-        
     }
     
     .margin-top-container {
         padding-top: 2%;
         width: 80vw;
         margin: 0 auto;
-        
     }
     
     .margin-top-between {
         margin-top: 1%;
         width: 80vw;
     }
+
     .lesson-container{
         position: relative;
         border: 2px solid #599FA5;
