@@ -28,7 +28,7 @@ class QuizFactory extends Factory
             'option2'=> $this->faker->sentence(4),
             'option3'=> $this->faker->sentence(4),
             'option4'=> $this->faker->sentence(2),
-            'selected' => '', 
+            'selected' => 'option2', 
             'user_id'=> $this->faker->numberBetween(1, 50)
         ];
     }

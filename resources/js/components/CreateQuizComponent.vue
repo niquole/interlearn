@@ -9,7 +9,7 @@
     </div>
     <div class="mrgn-top"></div>
     <div class="mrgn-top"> </div>
-
+    
     <!-- END OF NAV -->
     
     <!-- STEPPER -->
@@ -21,50 +21,77 @@
     
     <!-- STEP 1 CONTENT -->
     <el-form v-if="active===1">
-      <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4}" placeholder="Question" v-model="title"></el-input>
-      <br>
-      <br>
-
-      <el-input type="textarea" :autosize="{ minRows: 3, maxRows: 4}" placeholder="Description" v-model="description"></el-input>
-    <el-button  style="margin-top: 12px;" @click="next" >Next step</el-button>
-
+      <div class="step-content">
+        
+        <div class="step-desc"><h4>Add your quizzes Title and Description</h4></div>
+        
+        <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4}" placeholder="Question" v-model="title"></el-input>
+        <br>
+        <br>
+        
+        <el-input type="textarea" :autosize="{ minRows: 3, maxRows: 4}" placeholder="Description" v-model="description"></el-input>
+        <div class="next-btn-position">
+          <el-button class="quiz-step-btn"  style="margin-top: 12px;" @click="next" >Next</el-button>
+        </div>
+        
+      </div>
+      
     </el-form>
-
-
+    
+    
     <!-- STEP 2 CONTENT -->
     <el-form  v-if="active===2">
-      <div class="center-radio">
-        <el-radio v-model="selected" label="option1">
-          <el-input v-model="option1"></el-input>
-        </el-radio>
-        <br>
+      <div class="step-content">
         
-        <el-radio v-model="selected" label="option2">
-          <el-input v-model="option2"></el-input>
-        </el-radio>
-        <br>
+        <div class="step-desc"><h4>Add your quizzes Options and then determine the correct one by selecting it.</h4></div>
         
-        <el-radio v-model="selected" label="option3">
-          <el-input v-model="option3"></el-input>
-        </el-radio>
+        <div class="center-radio">
+          <el-radio v-model="selected" label="option1">
+            <el-input v-model="option1"></el-input>
+          </el-radio>
+          <br>
+          
+          <el-radio v-model="selected" label="option2">
+            <el-input v-model="option2"></el-input>
+          </el-radio>
+          <br>
+          
+          <el-radio v-model="selected" label="option3">
+            <el-input v-model="option3"></el-input>
+          </el-radio>
+          <br>
+          
+          <el-radio v-model="selected" label="option4">
+            <el-input v-model="option4"></el-input>
+          </el-radio>
+        </div>
         <br>
+        <div class="previous-btn-position">
+          <el-button class="quiz-step-btn" style="margin-top: 12px;" @click="gotofirst" >Previous</el-button>
+        </div>
+        <div class="next-btn-position">
+          <el-button class="quiz-step-btn" style="margin-top: 12px;" @click="next" >Next</el-button>
+        </div>
         
-        <el-radio v-model="selected" label="option4">
-          <el-input v-model="option4"></el-input>
-        </el-radio>
       </div>
-      <br>
-    <el-button  style="margin-top: 12px;" @click="gotofirst" >Previous step</el-button>
-    <el-button  style="margin-top: 12px;" @click="next" >Next step</el-button>
+      
     </el-form>
-
-
+    
+    
     <!-- STEP 3 CONTENT -->
     <el-form v-if="active===3">
-    <el-button  style="margin-top: 12px;" @click="gotosecond" >Previous step</el-button>
-    <el-button  style="margin-top: 12px;" @click="addquiz" >Done</el-button>
+      <div class="step-content">
+        
+        <div class="step-desc"><h4>This is a checking point. Please make sure that your quiz is ready by checking the previous steps.</h4></div>
+        <div class="previous-btn-position">
+          <el-button class="quiz-step-btn" style="margin-top: 12px;" @click="gotosecond"> Previous</el-button>
+        </div>
+        <div class="next-btn-position">
+          <el-button class="step-done-btn"  style="margin-top: 12px;" @click="addquiz">Done</el-button>
+        </div>
+      </div>
     </el-form>
-
+    
     
     
   </div>
@@ -133,10 +160,10 @@
           this.option3 = '';
           this.option4 = '';
           this.submitting = false;
-        window.location.replace("/quizzes" )
+          window.location.replace("/quizzes" )
         });
       }
-        
+      
     },
     mounted() {
       
@@ -149,42 +176,59 @@
     width: 70vw;
     margin: 0 auto;
   }
-
+  
   .center-radio {
     position: relative;
     left: 23%;
     width: 50vw !important; 
-
+    
   }
-
+  
   .el-input {
     width: 35vw;
     margin: 0 auto;
     
-
+    
   }
-
+  
   .el-input__inner {
     background-color: transparent !important;
     border-radius: 20px;
   }
-
+  
   .el-textarea__inner {
     background-color: transparent !important;
     border-radius: 20px;
   }
-
+  
   .el-step__title {
     font-size: 20px;
     margin-bottom: 5%;
   }
-
+  
   .el-step__title.is-finish {
     color:rgb(181, 134, 189);
   }
-
+  
   .el-step__head.is-finish {
     color: rgb(237, 137, 255);
     border-color:rgb(181, 134, 189);
+  }
+  
+  .quiz-step-btn {
+    background-color: transparent;
+    height: 5vh;
+    width: 8vw;
+    color: #fff;
+    border: 2px solid #FCBF49;
+    border-radius: 15px;
+    transition: .2s;
+    font-size: 18px;
+    padding: 10px;
+  }
+  .quiz-step-btn:hover {
+    background-color: #FCBF49 ;
+    color: #fff;
+    border: 2px dotted #fff ;
   }
 </style>

@@ -21,29 +21,54 @@
         
         <!-- STEP 1 CONTENT -->
         <el-form v-if="active===1">
-            <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4}" placeholder="Question" v-model="title"></el-input>
-            <br>
-            <br>
-            
-            <el-input type="textarea" :autosize="{ minRows: 3, maxRows: 4}" placeholder="Description" v-model="description"></el-input>
-            <el-button  style="margin-top: 12px;" @click="next" >Next step</el-button>
+            <div class="step-content">
+                <div class="step-desc"><h4>Determine your lessons Title and Description</h4></div>
+                <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4}" placeholder="Title" v-model="title"></el-input>
+                <br>
+                <br>
+                <el-input type="textarea" :autosize="{ minRows: 3, maxRows: 4}" placeholder="Description" v-model="description"></el-input>
+                <div class="next-btn-position">
+                    <el-button class="step-btn" style="margin-top: 12px;" @click="next" >Next</el-button>
+                </div>
+
+            </div>
             
         </el-form>
         
         
         <!-- STEP 2 CONTENT -->
         <el-form  v-if="active===2">
-            <el-input type="textarea" :autosize="{ minRows: 5, maxRows: 10}" placeholder="Content" v-model="content"></el-input>
-            
-            <el-button  style="margin-top: 12px;" @click="gotofirst" >Previous step</el-button>
-            <el-button  style="margin-top: 12px;" @click="next" >Next step</el-button>
+            <div class="step-content">
+                <div class="step-desc"><h4>Add your lessons Content</h4></div>
+                
+                <el-input type="textarea" :autosize="{ minRows: 5, maxRows: 6}" placeholder="Content" v-model="content"></el-input>
+                
+
+                <div class="next-btn-position">
+                    <el-button class="step-btn" style="margin-top: 12px;" @click="next" >Next</el-button>
+                </div>
+
+                <div class="previous-btn-position">
+                    <el-button  class="step-btn"style="margin-top: 12px;" @click="gotofirst" >Previous</el-button>
+                </div>
+            </div>
         </el-form>
         
         
         <!-- STEP 3 CONTENT -->
         <el-form v-if="active===3">
-            <el-button  style="margin-top: 12px;" @click="gotosecond" >Previous step</el-button>
-            <el-button  style="margin-top: 12px;" @click="addlesson">Done</el-button>
+            <div class="step-content">
+                <div class="step-desc"><h4>This is a checking point. Please make sure that your lesson is ready by checking the previous steps.</h4>
+                </div>
+                
+                <div class="next-btn-position">
+                    <el-button class="step-done-btn" style="margin-top: 12px;" @click="addlesson">Done</el-button>
+                </div>
+
+                <div class="previous-btn-position">
+                    <el-button class="step-btn" style="margin-top: 12px;" @click="gotosecond" >Previous</el-button>
+                </div>
+            </div>
         </el-form>
         
         
@@ -78,37 +103,37 @@
                 if (this.active++ > 1) this.active = 2;
             },
             fetchlessons() {
-                    this.loading = true;
-                    this.lessons = [];
-                    
-                    axios.get('http://interlearn.test/api/lessons')
-                    .then((response) => {
-                        const data = response.data;
-                        this.lessons = data;
-                        this.loading = false;
-                    });
-                },
-                addlesson() {
-                    this.submitting = true;
-                    axios.post('http://interlearn.test/api/lessons', {
-                        title: this.title,
-                        description: this.description,
-                        content: this.content,
-                        
-                        
-                    })
-                    .then((response) => {
-                        const data = response.data;
-                        this.lessons.push(data);
-                        this.title = '';
-                        this.description = '';
-                        this.content = '';
-                        this.submitting = false;
-                window.location.replace("/quizzes" )
-
-                    });
-                }
+                this.loading = true;
+                this.lessons = [];
+                
+                axios.get('http://interlearn.test/api/lessons')
+                .then((response) => {
+                    const data = response.data;
+                    this.lessons = data;
+                    this.loading = false;
+                });
             },
+            addlesson() {
+                this.submitting = true;
+                axios.post('http://interlearn.test/api/lessons', {
+                    title: this.title,
+                    description: this.description,
+                    content: this.content,
+                    
+                    
+                })
+                .then((response) => {
+                    const data = response.data;
+                    this.lessons.push(data);
+                    this.title = '';
+                    this.description = '';
+                    this.content = '';
+                    this.submitting = false;
+                    window.location.replace("/lessons" )
+                    
+                });
+            }
+        },
         mounted() {
             
         }
@@ -119,6 +144,7 @@
     .stepper {
         width: 70vw;
         margin: 0 auto;
+        position: relative;
     }
     
     .center-radio {
@@ -148,6 +174,7 @@
     .el-step__title {
         font-size: 20px;
         margin-bottom: 5%;
+        font-weight: bold;
     }
     
     .el-step__title.is-finish {
@@ -158,4 +185,78 @@
         color: rgb(237, 137, 255);
         border-color:rgb(181, 134, 189);
     }
+    
+    .step-desc {
+        font-size: 18px;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 2%;
+    }
+    
+    .el-button:focus {
+        outline: 0 !important;
+        color: #fff;
+        background-color: transparent;
+    }
+    
+    button:focus {
+        outline: 0 !important;
+    }
+    
+    .step-btn {
+        background-color: transparent;
+        height: 5vh;
+        width: 8vw;
+        color: #fff;
+        border: 2px solid #599FA5;
+        border-radius: 15px;
+        transition: .2s;
+        font-size: 18px;
+        padding: 10px;
+
+    }
+
+
+    .step-btn:hover {
+        background-color: #599FA5 ;
+        color: #fff;
+        border: 2px dotted #fff ;
+        
+    }
+    
+    .step-done-btn {
+        background-color: rgb(156, 189, 134);
+        height: 5vh;
+        width: 8vw;
+        color: #fff;
+        border: 2px solid rgb(156, 189, 134);
+        border-radius: 15px;
+        transition: .2s;
+        font-size: 20px;
+        transition: .2s;
+        margin: 0 auto;
+    }
+    
+    .step-done-btn:hover {
+        background-color: rgb(127, 158, 106);
+        color: #fff;
+        border: 2px dotted #fff;
+    }
+
+    .step-content {
+        height: 60vh;
+    }
+
+    .next-btn-position {
+        position: absolute;
+        top: 50%;
+        left: 88%;
+    }
+
+    .previous-btn-position {
+        position: absolute;
+        top: 50%;
+        /* right: 88%;   */
+    }
+    
 </style>
