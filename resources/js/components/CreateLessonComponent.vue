@@ -1,17 +1,5 @@
 <template>
     <div class="stepper">
-        <!-- NAVIGATION  -->
-        <div class="mrgn-top"> </div>
-        <div class="navigation">
-            <a href="/create-lesson" id="lesson-nav" class="navlink active">Lesson</a>
-            |
-            <a href="/create-quiz" id="quiz-nav" class="navlink ">Quiz</a>
-        </div>
-        <div class="mrgn-top"></div>
-        <div class="mrgn-top"> </div>
-        
-        <!-- END OF NAV -->
-        
         <!-- STEPPER -->
         <el-steps :active="active">
             <el-step title="Step 1"></el-step>
@@ -30,7 +18,7 @@
                 <div class="next-btn-position">
                     <el-button class="step-btn" style="margin-top: 12px;" @click="next" >Next</el-button>
                 </div>
-
+                
             </div>
             
         </el-form>
@@ -43,13 +31,13 @@
                 
                 <el-input type="textarea" :autosize="{ minRows: 5, maxRows: 6}" placeholder="Content" v-model="content"></el-input>
                 
-
+                
                 <div class="next-btn-position">
                     <el-button class="step-btn" style="margin-top: 12px;" @click="next" >Next</el-button>
                 </div>
-
+                
                 <div class="previous-btn-position">
-                    <el-button  class="step-btn"style="margin-top: 12px;" @click="gotofirst" >Previous</el-button>
+                    <el-button  class="prev-step-btn" style="margin-top: 12px;" @click="gotofirst" >Previous</el-button>
                 </div>
             </div>
         </el-form>
@@ -62,11 +50,13 @@
                 </div>
                 
                 <div class="next-btn-position">
-                    <el-button class="step-done-btn" style="margin-top: 12px;" @click="addlesson">Done</el-button>
+                    <el-button class="step-done-btn" style="margin-top: 12px;" @click="addlesson">
+                        <span class="done">Done</span>
+                        </el-button>
                 </div>
-
+                
                 <div class="previous-btn-position">
-                    <el-button class="step-btn" style="margin-top: 12px;" @click="gotosecond" >Previous</el-button>
+                    <el-button class="prev-step-btn" style="margin-top: 12px;" @click="gotosecond" >Previous</el-button>
                 </div>
             </div>
         </el-form>
@@ -137,10 +127,16 @@
         mounted() {
             
         }
+        
     }
+    
 </script>
 
 <style>
+    .create_lesson:hover {
+        
+        background-color: #FCBF49 !important;
+    }
     .stepper {
         width: 70vw;
         margin: 0 auto;
@@ -213,10 +209,10 @@
         transition: .2s;
         font-size: 18px;
         padding: 10px;
-
+        
     }
-
-
+    
+    
     .step-btn:hover {
         background-color: #599FA5 ;
         color: #fff;
@@ -242,21 +238,39 @@
         color: #fff;
         border: 2px dotted #fff;
     }
-
+    
     .step-content {
         height: 60vh;
     }
-
+    
     .next-btn-position {
         position: absolute;
         top: 50%;
         left: 88%;
     }
-
+    
     .previous-btn-position {
         position: absolute;
         top: 50%;
         /* right: 88%;   */
+    }
+
+    .prev-step-btn { 
+        background-color: transparent;
+        height: 5vh;
+        width: 8vw;
+        color: #fff;
+        border: 2px solid #599FA5;
+        border-radius: 15px;
+        transition: .2s;
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .prev-step-btn:hover {
+               background-color: #599FA5 ;
+        color: #fff;
+        border: 2px dotted #fff ; 
     }
     
 </style>

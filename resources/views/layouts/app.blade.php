@@ -62,12 +62,18 @@
                                 </li>
                                 @endif
                                 @else
+                                <span class="createspan">Create:</span>
+
                                 <li class="nav-item">
-                                    <a  class="nav-link" href="/create-lesson">                                    
-                                        <button class="create" >{{ __('Create') }}!</button></a>
+                                    <a  class="nav-link" href="/create-lesson">           
+                                        <button class="create_lesson" >{{ __('Lesson') }}!</button></a>
                                         
                                     </li>
-                                    
+                                    <a  class="" href="/create-quiz">  
+
+                                        <button class="create_quiz" >{{ __('Quiz') }}!</button></a>
+                                        
+                                    </li>
                                     <li class="nav-item dropdown" id="dropdown-arrow">
                                             <a id="navbarDropdown"  class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                                     <span id="current-user">

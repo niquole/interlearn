@@ -1,17 +1,5 @@
 <template>
   <div class="stepper">
-    <!-- NAVIGATION  -->
-    <div class="mrgn-top"> </div>
-    <div class="navigation">
-      <a href="/create-lesson" id="lesson-nav" class="navlink">Lesson</a>
-      |
-      <a href="/create-quiz" id="quiz-nav" class="navlink active">Quiz</a>
-    </div>
-    <div class="mrgn-top"></div>
-    <div class="mrgn-top"> </div>
-    
-    <!-- END OF NAV -->
-    
     <!-- STEPPER -->
     <el-steps :active="active">
       <el-step title="Step 1"></el-step>
@@ -67,7 +55,7 @@
         </div>
         <br>
         <div class="previous-btn-position">
-          <el-button class="quiz-step-btn" style="margin-top: 12px;" @click="gotofirst" >Previous</el-button>
+          <el-button class="quiz-prev-step-btn" style="margin-top: 12px;" @click="gotofirst" >Previous</el-button>
         </div>
         <div class="next-btn-position">
           <el-button class="quiz-step-btn" style="margin-top: 12px;" @click="next" >Next</el-button>
@@ -84,10 +72,12 @@
         
         <div class="step-desc"><h4>This is a checking point. Please make sure that your quiz is ready by checking the previous steps.</h4></div>
         <div class="previous-btn-position">
-          <el-button class="quiz-step-btn" style="margin-top: 12px;" @click="gotosecond"> Previous</el-button>
+          <el-button class="quiz-prev-step-btn" style="margin-top: 12px;" @click="gotosecond"> Previous</el-button>
         </div>
         <div class="next-btn-position">
-          <el-button class="step-done-btn"  style="margin-top: 12px;" @click="addquiz">Done</el-button>
+          <el-button class="step-done-btn"  style="margin-top: 12px;" @click="addquiz">
+            <span class="done">Done</span> 
+            </el-button>
         </div>
       </div>
     </el-form>
@@ -174,7 +164,7 @@
 <style>
   .stepper {
     width: 70vw;
-    margin: 0 auto;
+    margin: 6% auto;
   }
   
   .center-radio {
@@ -227,6 +217,24 @@
     padding: 10px;
   }
   .quiz-step-btn:hover {
+    background-color: #FCBF49 ;
+    color: #fff;
+    border: 2px dotted #fff ;
+  }
+
+  .quiz-prev-step-btn {
+        background-color: transparent;
+    height: 5vh;
+    width: 8vw;
+    color: #fff;
+    border: 2px solid #FCBF49;
+    border-radius: 15px;
+    transition: .2s;
+    font-size: 18px;
+    padding: 10px;
+  }
+
+   .quiz-prev-step-btn:hover {
     background-color: #FCBF49 ;
     color: #fff;
     border: 2px dotted #fff ;

@@ -2088,16 +2088,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2167,16 +2157,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2691,7 +2671,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -9190,7 +9169,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.stepper {\n    width: 70vw;\n    margin: 0 auto;\n    position: relative;\n}\n.center-radio {\n    position: relative;\n    left: 23%;\n    width: 50vw !important;\n}\n.el-input {\n    width: 35vw;\n    margin: 0 auto;\n}\n.el-input__inner {\n    background-color: transparent !important;\n    border-radius: 20px;\n}\n.el-textarea__inner {\n    background-color: transparent !important;\n    border-radius: 20px;\n}\n.el-step__title {\n    font-size: 20px;\n    margin-bottom: 5%;\n    font-weight: bold;\n}\n.el-step__title.is-finish {\n    color:rgb(181, 134, 189);\n}\n.el-step__head.is-finish {\n    color: rgb(237, 137, 255);\n    border-color:rgb(181, 134, 189);\n}\n.step-desc {\n    font-size: 18px;\n    margin: 0 auto;\n    text-align: center;\n    margin-bottom: 2%;\n}\n.el-button:focus {\n    outline: 0 !important;\n    color: #fff;\n    background-color: transparent;\n}\nbutton:focus {\n    outline: 0 !important;\n}\n.step-btn {\n    background-color: transparent;\n    height: 5vh;\n    width: 8vw;\n    color: #fff;\n    border: 2px solid #599FA5;\n    border-radius: 15px;\n    transition: .2s;\n    font-size: 18px;\n    padding: 10px;\n}\n.step-btn:hover {\n    background-color: #599FA5 ;\n    color: #fff;\n    border: 2px dotted #fff ;\n}\n.step-done-btn {\n    background-color: rgb(156, 189, 134);\n    height: 5vh;\n    width: 8vw;\n    color: #fff;\n    border: 2px solid rgb(156, 189, 134);\n    border-radius: 15px;\n    transition: .2s;\n    font-size: 20px;\n    transition: .2s;\n    margin: 0 auto;\n}\n.step-done-btn:hover {\n    background-color: rgb(127, 158, 106);\n    color: #fff;\n    border: 2px dotted #fff;\n}\n.step-content {\n    height: 60vh;\n}\n.next-btn-position {\n    position: absolute;\n    top: 50%;\n    left: 88%;\n}\n.previous-btn-position {\n    position: absolute;\n    top: 50%;\n    /* right: 88%;   */\n}\n\n", ""]);
+exports.push([module.i, "\n.create_lesson:hover {\n    \n    background-color: #FCBF49 !important;\n}\n.stepper {\n    width: 70vw;\n    margin: 0 auto;\n    position: relative;\n}\n.center-radio {\n    position: relative;\n    left: 23%;\n    width: 50vw !important;\n}\n.el-input {\n    width: 35vw;\n    margin: 0 auto;\n}\n.el-input__inner {\n    background-color: transparent !important;\n    border-radius: 20px;\n}\n.el-textarea__inner {\n    background-color: transparent !important;\n    border-radius: 20px;\n}\n.el-step__title {\n    font-size: 20px;\n    margin-bottom: 5%;\n    font-weight: bold;\n}\n.el-step__title.is-finish {\n    color:rgb(181, 134, 189);\n}\n.el-step__head.is-finish {\n    color: rgb(237, 137, 255);\n    border-color:rgb(181, 134, 189);\n}\n.step-desc {\n    font-size: 18px;\n    margin: 0 auto;\n    text-align: center;\n    margin-bottom: 2%;\n}\n.el-button:focus {\n    outline: 0 !important;\n    color: #fff;\n    background-color: transparent;\n}\nbutton:focus {\n    outline: 0 !important;\n}\n.step-btn {\n    background-color: transparent;\n    height: 5vh;\n    width: 8vw;\n    color: #fff;\n    border: 2px solid #599FA5;\n    border-radius: 15px;\n    transition: .2s;\n    font-size: 18px;\n    padding: 10px;\n}\n.step-btn:hover {\n    background-color: #599FA5 ;\n    color: #fff;\n    border: 2px dotted #fff ;\n}\n.step-done-btn {\n    background-color: rgb(156, 189, 134);\n    height: 5vh;\n    width: 8vw;\n    color: #fff;\n    border: 2px solid rgb(156, 189, 134);\n    border-radius: 15px;\n    transition: .2s;\n    font-size: 20px;\n    transition: .2s;\n    margin: 0 auto;\n}\n.step-done-btn:hover {\n    background-color: rgb(127, 158, 106);\n    color: #fff;\n    border: 2px dotted #fff;\n}\n.step-content {\n    height: 60vh;\n}\n.next-btn-position {\n    position: absolute;\n    top: 50%;\n    left: 88%;\n}\n.previous-btn-position {\n    position: absolute;\n    top: 50%;\n    /* right: 88%;   */\n}\n.prev-step-btn { \n    background-color: transparent;\n    height: 5vh;\n    width: 8vw;\n    color: #fff;\n    border: 2px solid #599FA5;\n    border-radius: 15px;\n    transition: .2s;\n    font-size: 18px;\n    padding: 10px;\n}\n.prev-step-btn:hover {\n           background-color: #599FA5 ;\n    color: #fff;\n    border: 2px dotted #fff ;\n}\n\n", ""]);
 
 // exports
 
@@ -9209,7 +9188,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.stepper {\n  width: 70vw;\n  margin: 0 auto;\n}\n.center-radio {\n  position: relative;\n  left: 23%;\n  width: 50vw !important;\n}\n.el-input {\n  width: 35vw;\n  margin: 0 auto;\n}\n.el-input__inner {\n  background-color: transparent !important;\n  border-radius: 20px;\n}\n.el-textarea__inner {\n  background-color: transparent !important;\n  border-radius: 20px;\n}\n.el-step__title {\n  font-size: 20px;\n  margin-bottom: 5%;\n}\n.el-step__title.is-finish {\n  color:rgb(181, 134, 189);\n}\n.el-step__head.is-finish {\n  color: rgb(237, 137, 255);\n  border-color:rgb(181, 134, 189);\n}\n.quiz-step-btn {\n  background-color: transparent;\n  height: 5vh;\n  width: 8vw;\n  color: #fff;\n  border: 2px solid #FCBF49;\n  border-radius: 15px;\n  transition: .2s;\n  font-size: 18px;\n  padding: 10px;\n}\n.quiz-step-btn:hover {\n  background-color: #FCBF49 ;\n  color: #fff;\n  border: 2px dotted #fff ;\n}\n", ""]);
+exports.push([module.i, "\n.stepper {\n  width: 70vw;\n  margin: 6% auto;\n}\n.center-radio {\n  position: relative;\n  left: 23%;\n  width: 50vw !important;\n}\n.el-input {\n  width: 35vw;\n  margin: 0 auto;\n}\n.el-input__inner {\n  background-color: transparent !important;\n  border-radius: 20px;\n}\n.el-textarea__inner {\n  background-color: transparent !important;\n  border-radius: 20px;\n}\n.el-step__title {\n  font-size: 20px;\n  margin-bottom: 5%;\n}\n.el-step__title.is-finish {\n  color:rgb(181, 134, 189);\n}\n.el-step__head.is-finish {\n  color: rgb(237, 137, 255);\n  border-color:rgb(181, 134, 189);\n}\n.quiz-step-btn {\n  background-color: transparent;\n  height: 5vh;\n  width: 8vw;\n  color: #fff;\n  border: 2px solid #FCBF49;\n  border-radius: 15px;\n  transition: .2s;\n  font-size: 18px;\n  padding: 10px;\n}\n.quiz-step-btn:hover {\n  background-color: #FCBF49 ;\n  color: #fff;\n  border: 2px dotted #fff ;\n}\n.quiz-prev-step-btn {\n      background-color: transparent;\n  height: 5vh;\n  width: 8vw;\n  color: #fff;\n  border: 2px solid #FCBF49;\n  border-radius: 15px;\n  transition: .2s;\n  font-size: 18px;\n  padding: 10px;\n}\n.quiz-prev-step-btn:hover {\n  background-color: #FCBF49 ;\n  color: #fff;\n  border: 2px dotted #fff ;\n}\n", ""]);
 
 // exports
 
@@ -101317,14 +101296,6 @@ var render = function() {
     "div",
     { staticClass: "stepper" },
     [
-      _c("div", { staticClass: "mrgn-top" }),
-      _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "mrgn-top" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "mrgn-top" }),
-      _vm._v(" "),
       _c(
         "el-steps",
         { attrs: { active: _vm.active } },
@@ -101455,7 +101426,7 @@ var render = function() {
                     _c(
                       "el-button",
                       {
-                        staticClass: "step-btn",
+                        staticClass: "prev-step-btn",
                         staticStyle: { "margin-top": "12px" },
                         on: { click: _vm.gotofirst }
                       },
@@ -101492,7 +101463,7 @@ var render = function() {
                       staticStyle: { "margin-top": "12px" },
                       on: { click: _vm.addlesson }
                     },
-                    [_vm._v("Done")]
+                    [_c("span", { staticClass: "done" }, [_vm._v("Done")])]
                   )
                 ],
                 1
@@ -101505,7 +101476,7 @@ var render = function() {
                   _c(
                     "el-button",
                     {
-                      staticClass: "step-btn",
+                      staticClass: "prev-step-btn",
                       staticStyle: { "margin-top": "12px" },
                       on: { click: _vm.gotosecond }
                     },
@@ -101521,32 +101492,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navigation" }, [
-      _c(
-        "a",
-        {
-          staticClass: "navlink active",
-          attrs: { href: "/create-lesson", id: "lesson-nav" }
-        },
-        [_vm._v("Lesson")]
-      ),
-      _vm._v("\n        |\n        "),
-      _c(
-        "a",
-        {
-          staticClass: "navlink ",
-          attrs: { href: "/create-quiz", id: "quiz-nav" }
-        },
-        [_vm._v("Quiz")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -101572,14 +101518,6 @@ var render = function() {
     "div",
     { staticClass: "stepper" },
     [
-      _c("div", { staticClass: "mrgn-top" }),
-      _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "mrgn-top" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "mrgn-top" }),
-      _vm._v(" "),
       _c(
         "el-steps",
         { attrs: { active: _vm.active } },
@@ -101796,7 +101734,7 @@ var render = function() {
                   _c(
                     "el-button",
                     {
-                      staticClass: "quiz-step-btn",
+                      staticClass: "quiz-prev-step-btn",
                       staticStyle: { "margin-top": "12px" },
                       on: { click: _vm.gotofirst }
                     },
@@ -101844,7 +101782,7 @@ var render = function() {
                   _c(
                     "el-button",
                     {
-                      staticClass: "quiz-step-btn",
+                      staticClass: "quiz-prev-step-btn",
                       staticStyle: { "margin-top": "12px" },
                       on: { click: _vm.gotosecond }
                     },
@@ -101865,7 +101803,7 @@ var render = function() {
                       staticStyle: { "margin-top": "12px" },
                       on: { click: _vm.addquiz }
                     },
-                    [_vm._v("Done")]
+                    [_c("span", { staticClass: "done" }, [_vm._v("Done")])]
                   )
                 ],
                 1
@@ -101877,32 +101815,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navigation" }, [
-      _c(
-        "a",
-        {
-          staticClass: "navlink",
-          attrs: { href: "/create-lesson", id: "lesson-nav" }
-        },
-        [_vm._v("Lesson")]
-      ),
-      _vm._v("\n    |\n    "),
-      _c(
-        "a",
-        {
-          staticClass: "navlink active",
-          attrs: { href: "/create-quiz", id: "quiz-nav" }
-        },
-        [_vm._v("Quiz")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -102284,9 +102197,9 @@ var render = function() {
             [
               _c("h1", { staticClass: "quiz-titl" }, [
                 _vm._v(
-                  "\n                            " +
+                  "\n                        " +
                     _vm._s(_vm.quiz.title) +
-                    " (Quiz)\n                        "
+                    " (Quiz)\n                    "
                 )
               ])
             ]
@@ -102295,15 +102208,15 @@ var render = function() {
           _c("div", { staticClass: "card-text quiz-desc" }, [
             _c("br"),
             _vm._v(
-              "\n                        " +
+              "\n                    " +
                 _vm._s(_vm.quiz.description) +
-                "\n                    "
+                "\n                "
             )
           ]),
           _vm._v(
-            "\n                    Creator: \n                    " +
+            "\n                Creator: \n                " +
               _vm._s(_vm.quiz.user.name) +
-              " \n                    "
+              " \n                "
           ),
           _c("img", {
             staticClass: "quiz-lesson-img",
@@ -102315,7 +102228,7 @@ var render = function() {
           _vm._v(" "),
           _c("br"),
           _vm._v(
-            "\n                    \n                    Answers\n                    "
+            "\n                \n                Answers\n                "
           ),
           _vm._m(0),
           _vm._v(" "),
@@ -102392,9 +102305,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { attrs: { id: "correct" } }, [
       _c("h1", [
-        _vm._v(
-          "\n                            Correct!\n                        "
-        )
+        _vm._v("\n                        Correct!\n                    ")
       ])
     ])
   },
