@@ -10925,6 +10925,12 @@ html body a .nav-brand {
   position: relative;
 }
 
+html body .el-button:active {
+  color: #599FA5 !important;
+  background-color: transparent !important;
+  border: 1px solid #599FA5 !important;
+}
+
 html body li a .create {
   position: absolute;
   right: 10%;
@@ -11134,6 +11140,31 @@ html .create_lesson:hover {
     margin-top: 40px !important;
     padding-right: 50px !important;
   }
+
+  img#logo {
+    left: 0% !important;
+  }
+
+  .footer-img {
+    height: 40px !important;
+    padding-right: 10px !important;
+  }
+
+  #github img {
+    height: 20px !important;
+  }
+
+  #figma img {
+    height: 30px !important;
+  }
+
+  .footerspan {
+    font-size: 12px !important;
+  }
+
+  .option {
+    font-size: 13px !important;
+  }
 }
 
 @media (max-width: 430px) {
@@ -11163,6 +11194,37 @@ html .create_lesson:hover {
   .prev-step-btn {
     margin-top: 60px !important;
     padding-right: 50px !important;
+  }
+
+  .done {
+    position: relative;
+    right: 25px;
+  }
+
+  .footer-img {
+    height: 30px !important;
+  }
+
+  #github img {
+    height: 10px !important;
+  }
+
+  #figma img {
+    height: 20px !important;
+  }
+
+  .footerspan {
+    margin-left: 20px !important;
+    display: inline-block;
+    font-size: 10px !important;
+  }
+
+  .option {
+    font-size: 10px !important;
+  }
+
+  body img#logo {
+    left: 0% !important;
   }
 }
 

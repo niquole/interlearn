@@ -11,7 +11,7 @@
             <img class="footer-img" src="https://i.ibb.co/zXTvSQw/logo.png" alt="logo" border="0"></a><br /><a target='_blank' href='https://statewideinventory.org/mercedes-0-60-times'>
             </a>
             <br/>
-            <span>
+            <span class="footerspan"> 
                 Interlearn &copy; 2020, All Rights Reserved
             </span>
             <div class="socials">

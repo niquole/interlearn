@@ -12,7 +12,6 @@
                             @csrf
                             
                             <div class="form-group row">
-                                <!-- <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label> -->
                                 <h1 class="card-header  center">{{ __('Login') }}</h1>
                                 
                                 <div class="col-md-12">
@@ -27,7 +26,6 @@
                             </div>
                             
                             <div class="form-group row">
-                                <!-- <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label> -->
                                 
                                 <div class="col-md-12">
                                     <input id="password" placeholder="Password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -59,11 +57,6 @@
                                     </button>
                                     
                                     @if (Route::has('password.request'))
-                                    <!-- <div class="center align-center">
-                                        <a class="btn btn-link mt-2 forgot" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                    </div> -->
                                     @endif
                                 </div>
                             </div>
@@ -79,7 +72,6 @@
         </div>
     </div>
 <footer-component></footer-component>
-
 </div>
 @endsection
 

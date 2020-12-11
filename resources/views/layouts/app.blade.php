@@ -63,32 +63,30 @@
                                 @endif
                                 @else
                                 <span class="createspan">Create:</span>
-
                                 <li class="nav-item">
                                     <a  class="nav-link" href="/create-lesson">           
                                         <button class="create_lesson" >{{ __('Lesson') }}!</button></a>
                                         
                                     </li>
                                     <a  class="" href="/create-quiz">  
-
+                                        
                                         <button class="create_quiz" >{{ __('Quiz') }}!</button></a>
                                         
                                     </li>
                                     <li class="nav-item dropdown" id="dropdown-arrow">
-                                            <a id="navbarDropdown"  class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                    <span id="current-user">
-                                                        {{ Auth::user()->name }}
-                                                    </span>
-                                            </a>
-                                            
-
+                                        <a id="navbarDropdown"  class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            <span id="current-user">
+                                                {{ Auth::user()->name }}
+                                            </span>
+                                        </a>
+                                        
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
                                             <a class="dropdown-item"  href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                                             <span id="logout">
                                                 {{ __('Logout') }}
-
+                                                
                                             </span>
                                         </a>
                                         
@@ -97,13 +95,16 @@
                                         </form>
                                     </div>
                                 </li>
+                                
                                 @endguest
+                                
                             </ul>
                         </div>
                     </div>
                 </nav>
                 <main class="py-4">
                     @yield('content')
+                    
                 </main>
             </div>
         </body>
