@@ -19,12 +19,7 @@ class DatabaseSeeder extends Seeder
         QuizSeeder::class,
         LessonSeeder::class,
         ContentSeeder::class
-        // QuestionSeeder::class,
-        // OptionSeeder::class,
-        // AnswerSeeder::class
-
        ]);
 
-        // \App\Models\User::factory(10)->create();
     }
 }
