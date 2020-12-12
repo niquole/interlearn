@@ -31,13 +31,13 @@
                     </div>
                     
                     <br>
-                    
-                    
                 </div>
-                <a href="/lessons">
-                    <span class="symbol">⬿</span><span>Go back to Lessons</span>
-                </a>
             </div>
+                <div class="goback">
+                    <a href="/lessons">
+                        <span class="symbol">⬿</span><span>Go back to Lessons</span>
+                    </a> 
+                </div>
         </div>
     </div>
 </template>
@@ -48,12 +48,17 @@
         font-size: 28px;
         text-align: center;
     }
+
+    .goback {
+        /* margin: 0 auto; */
+        text-align: center;
+    }
     
     a h1.titl {
         margin: 0 auto;
         border-radius: 20px 20px 0px 0px ;
     }
-
+    
     .box {
         background-color: rgba(71, 71, 71, 0.294);
         width: 19vw;
@@ -84,8 +89,8 @@
             font-size: 12px;
             width: 40vw;
             padding: 0px;
-        right: 10%;
-
+            right: 10%;
+            
             /* height: 50vh; */
         }
         

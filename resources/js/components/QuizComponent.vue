@@ -51,9 +51,11 @@
                     <br>
                     
                 </div>
-                <a href="/quizzes">
+                <div class="goback">
+                                    <a href="/quizzes">
                     <span class="symbol">⬿</span><span>Go back to Quizzes</span>
                 </a>
+                </div>
             </div>
         </div>
     </div>

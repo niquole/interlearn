@@ -2624,6 +2624,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["datalesson"],
   data: function data() {
@@ -2717,6 +2722,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -9291,7 +9298,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.symbol {\n    display: inline-block;\n    margin-left: 2px;\n    font-size: 28px;\n    text-align: center;\n}\na h1.titl {\n    margin: 0 auto;\n    border-radius: 20px 20px 0px 0px ;\n}\n.box {\n    background-color: rgba(71, 71, 71, 0.294);\n    width: 19vw;\n    font-size: 12px;\n    position: relative;\n    right: 30%;\n    padding: 1%;\n    margin-bottom: 20px;\n}\n.content {\n    background-color: #599fa5;\n    width: 52vw !important;\n    margin: 0 auto !important;\n    border-radius: 20px;\n    padding: 3%;\n    font-size: 20px;\n    font-weight: 100;\n}\n.quiz-lesson-img {\n    width: 52vw !important;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n@media (max-width: 1500px) {\n.box {\n        font-size: 12px;\n        width: 40vw;\n        padding: 0px;\n    right: 10%;\n\n        /* height: 50vh; */\n}\nh1 {\n        font-size: 14px;\n}\n}\n", ""]);
+exports.push([module.i, "\n.symbol {\n    display: inline-block;\n    margin-left: 2px;\n    font-size: 28px;\n    text-align: center;\n}\n.goback {\n    /* margin: 0 auto; */\n    text-align: center;\n}\na h1.titl {\n    margin: 0 auto;\n    border-radius: 20px 20px 0px 0px ;\n}\n.box {\n    background-color: rgba(71, 71, 71, 0.294);\n    width: 19vw;\n    font-size: 12px;\n    position: relative;\n    right: 30%;\n    padding: 1%;\n    margin-bottom: 20px;\n}\n.content {\n    background-color: #599fa5;\n    width: 52vw !important;\n    margin: 0 auto !important;\n    border-radius: 20px;\n    padding: 3%;\n    font-size: 20px;\n    font-weight: 100;\n}\n.quiz-lesson-img {\n    width: 52vw !important;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n@media (max-width: 1500px) {\n.box {\n        font-size: 12px;\n        width: 40vw;\n        padding: 0px;\n        right: 10%;\n        \n        /* height: 50vh; */\n}\nh1 {\n        font-size: 14px;\n}\n}\n", ""]);
 
 // exports
 
@@ -102219,10 +102226,10 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("br")
-        ]),
-        _vm._v(" "),
-        _vm._m(0)
-      ])
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(0)
     ])
   ])
 }
@@ -102231,9 +102238,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "/lessons" } }, [
-      _c("span", { staticClass: "symbol" }, [_vm._v("⬿")]),
-      _c("span", [_vm._v("Go back to Lessons")])
+    return _c("div", { staticClass: "goback" }, [
+      _c("a", { attrs: { href: "/lessons" } }, [
+        _c("span", { staticClass: "symbol" }, [_vm._v("⬿")]),
+        _c("span", [_vm._v("Go back to Lessons")])
+      ])
     ])
   }
 ]
@@ -102495,9 +102504,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "/quizzes" } }, [
-      _c("span", { staticClass: "symbol" }, [_vm._v("⬿")]),
-      _c("span", [_vm._v("Go back to Quizzes")])
+    return _c("div", { staticClass: "goback" }, [
+      _c("a", { attrs: { href: "/quizzes" } }, [
+        _c("span", { staticClass: "symbol" }, [_vm._v("⬿")]),
+        _c("span", [_vm._v("Go back to Quizzes")])
+      ])
     ])
   }
 ]
