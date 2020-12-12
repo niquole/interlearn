@@ -96,7 +96,7 @@
                 this.loading = true;
                 this.lessons = [];
                 
-                axios.get('http://interlearn.test/api/lessons')
+                axios.get('http://interlearn.me/api/lessons')
                 .then((response) => {
                     const data = response.data;
                     this.lessons = data;
@@ -105,7 +105,7 @@
             },
             addlesson() {
                 this.submitting = true;
-                axios.post('http://interlearn.test/api/lessons', {
+                axios.post('http://interlearn.me/api/lessons', {
                     title: this.title,
                     description: this.description,
                     content: this.content,
