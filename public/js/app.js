@@ -2116,7 +2116,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.loading = true;
       this.lessons = [];
-      axios.get('http://interlearn.test/api/lessons').then(function (response) {
+      axios.get('https://interlearn.me/api/lessons').then(function (response) {
         var data = response.data;
         _this.lessons = data;
         _this.loading = false;
@@ -2126,7 +2126,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       this.submitting = true;
-      axios.post('http://interlearn.test/api/lessons', {
+      axios.post('https://interlearn.me/api/lessons', {
         title: this.title,
         description: this.description,
         content: this.content
@@ -2279,7 +2279,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.loading = true;
       this.quizzes = [];
-      axios.get('http://interlearn.test/api/quizzes').then(function (response) {
+      axios.get('https://interlearn.me/api/quizzes').then(function (response) {
         var data = response.data;
         _this.quizzes = data;
         _this.loading = false;
@@ -2289,7 +2289,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       this.submitting = true;
-      axios.post('http://interlearn.test/api/quizzes', {
+      axios.post('https://interlearn.me/api/quizzes', {
         title: this.title,
         description: this.description,
         option1: this.option1,
