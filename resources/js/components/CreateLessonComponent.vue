@@ -16,7 +16,7 @@
                 <br>
                 <el-input type="textarea" :autosize="{ minRows: 3, maxRows: 4}" placeholder="Description" v-model="description"></el-input>
                 <div class="next-btn-position">
-                    <el-button class="step-btn" style="margin-top: 12px;" @click="next" >Next</el-button>
+                    <el-button class="step-btn" style="margin-top: 12px;" @click="next">Next</el-button>
                 </div>
                 
             </div>

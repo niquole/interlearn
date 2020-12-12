@@ -10981,6 +10981,7 @@ html body .navbar-expand-md .navbar-nav .nav-link {
 html body .card {
   background-color: transparent !important;
   margin: 0 auto !important;
+  z-index: -1;
 }
 
 html body #current-user {
@@ -11036,6 +11037,7 @@ html .create_lesson {
   font-size: 24px;
   font-weight: bold;
   transition: 0.2s;
+  z-index: 1;
 }
 
 html .create_lesson:hover {
@@ -11238,6 +11240,7 @@ html .create_lesson:hover {
 
 .forms .card-body {
   margin-top: 20%;
+  z-index: -1;
 }
 
 .forms .center {
