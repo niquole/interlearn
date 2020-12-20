@@ -3,7 +3,7 @@
         <div class="col mb-4 text-white">
             <div class="card text-center">
                 <div class="card-body">
-    <div class="mrgn-top"> </div>
+                    <div class="mrgn-top"> </div>
                     
                     <a :href="'/quiz/' + quiz.id" class="card-title">
                         <h1 class="quiz-titl">
@@ -31,31 +31,33 @@
                     <div id="wrong">
                         <h1>Wrong. Try again!</h1>
                     </div>
-                    <div class="quiz-content">
-                        <ul>
-                            <el-button class="option" @click="is_option1_right">{{quiz.option1}}</el-button>
-                            <br>
-                            <br>
-
-                            <el-button class="option" @click="is_option2_right">{{quiz.option2}}</el-button>
-                            <br>
-                            <br>
-                            
-                            <el-button class="option" @click="is_option3_right">{{quiz.option3}}</el-button>
-                            <br>
-                            <br>
-                            
-                            <el-button class="option"  @click="is_option4_right">{{quiz.option4}}</el-button>
-                        </ul>
-                    </div>
+                    
                     <br>
                     
                 </div>
-                <div class="goback">
-                                    <a href="/quizzes">
+                
+            </div>
+            <div class="quiz-content">
+                <ul>
+                    <el-button class="option" @click="is_option1_right">{{quiz.option1}}</el-button>
+                    <br>
+                    <br>
+                    
+                    <el-button class="option" @click="is_option2_right">{{quiz.option2}}</el-button>
+                    <br>
+                    <br>
+                    
+                    <el-button class="option" @click="is_option3_right">{{quiz.option3}}</el-button>
+                    <br>
+                    <br>
+                    
+                    <el-button class="option"  @click="is_option4_right">{{quiz.option4}}</el-button>
+                </ul>
+            </div>
+            <div class="goback">
+                <a href="/quizzes">
                     <span class="symbol">⬿</span><span>Go back to Quizzes</span>
                 </a>
-                </div>
             </div>
         </div>
     </div>
@@ -125,12 +127,16 @@
     }
 </script>
 
-<style>
+<style scoped>
     a h1.quiz-titl {
         margin: 0 auto;
         border-radius: 20px 20px 0px 0px ;
+        width: 400px;
     }
     
+    .card{
+        z-index: -1 !important;
+    }
     
     .quiz-content {
         width: 52.1vw !important;
@@ -141,6 +147,9 @@
         font-weight: 100;
     }
     
+    .quiz-content {
+        z-index: 2;
+    }
     .option {
         background-color: transparent;
         border-radius: 20px;
@@ -158,7 +167,7 @@
         border-radius: 20px;
         text-align: center;
     }
-
+    
     h1 {
         margin-top: 22%;
     }

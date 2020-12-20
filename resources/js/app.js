@@ -28,6 +28,7 @@ Vue.use(ElementUI);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('create-component', require('./components/CreateComponent.vue').default);
 Vue.component('quizzes-component', require('./components/QuizzesComponent.vue').default);
 Vue.component('lessons-component', require('./components/LessonsComponent.vue').default);
 

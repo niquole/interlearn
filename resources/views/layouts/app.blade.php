@@ -49,7 +49,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md  shadow-sm">
             <div class="container">
-                <a class="navbar-brand " href="{{ url('/lessons') }}">
+                <a class="navbar-brand " href="{{ url('/') }}">
                     <!-- {{ config('app.name', 'InterLearn') }} -->
                     <img src="https://i.ibb.co/zXTvSQw/logo.png" alt="" id="logo" class="">
                 </a>
@@ -95,7 +95,7 @@
                                     </li>
                                     <li class="nav-item dropdown" id="dropdown-arrow">
                                         <a id="navbarDropdown"  class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            <span id="current-user">
+                                            <span id="current-user" class="h4">
                                                 {{ Auth::user()->name }}
                                             </span>
                                         </a>

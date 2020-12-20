@@ -77,12 +77,9 @@ html {
     .card {
       background-color: transparent !important;
       margin: 0 auto !important;
-      z-index: -1;
+      // z-index: 2;
     }
-    
-    #current-user {
-      color: #fff !important;
-    }
+
     #dropdown-arrow a{
       color: #FCBF49 !important;
     }
@@ -141,7 +138,7 @@ html {
     
     background-color: #FCBF49 !important;
   }
-  
+
 }
 
 @media (max-width: 1630px) {

@@ -41,7 +41,12 @@
         </div>
     </div>
 </template>
-<style >
+
+<style scoped>
+    .card {
+      z-index: -2 !important;
+        
+    }
     .symbol {
         display: inline-block;
         margin-left: 2px;
@@ -83,6 +88,8 @@
         width: 52vw !important;
         object-fit: contain;
     }
+
+
     
     @media (max-width: 1500px) {
         .box {

@@ -19,7 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
-Route::get('/', [App\Http\Controllers\LessonController::class, 'index'])->name('/lessons');
+Route::get('/', [App\Http\Controllers\LandingController::class, 'index'])->name('/');
+Route::get('/create', [App\Http\Controllers\CreateController::class, 'index'])->name('/create');
+Route::get('/login-teacher', [App\Http\Controllers\LoginTeacherController::class, 'index'])->name('/login-teacher');
+
 
 // QUIZ ROUTES
 Route::get('/quizzes', [App\Http\Controllers\QuizController::class, 'index'])->name('/quizzes');

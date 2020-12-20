@@ -16,11 +16,11 @@
             </span>
             <div class="socials">
                 <a href="https://github.com/niquole/interlearn" target="_blank" id="github">
-                    <img src="https://image.flaticon.com/icons/png/512/25/25231.png"  alt="github">
+                    <img src="https://cdn1.iconfinder.com/data/icons/social-media-logos-7/64/github-512.png"  alt="github">
                 </a>
                 
                 <a href="https://www.figma.com/file/n1Ax4lUW9x5EJfW0gOgcOX/InternLearn-Desktop-and-Mobile" target="_blank" id="figma">
-                    <img src="https://cdn4.iconfinder.com/data/icons/vector-brand-logos/40/Figma-512.png" alt="figma">
+                    <img src="https://seeklogo.com/images/F/figma-logo-E4E21D3AEA-seeklogo.com.png" alt="figma">
                 </a>
             </div>
         </div>
@@ -30,7 +30,9 @@
 
 <style>
     .footer {
-        position: relative;
+        position: fixed;
+        left: 0;
+        bottom: 0;
         height: 60px;
         width: 100%;
         color: rgba(255, 255, 255, 0.335);
@@ -40,24 +42,37 @@
     .footer-img {
         position: absolute;
         left: 10px;
-        bottom: -20px;
         height: 50px;
         align-items: left;
         
+    }
+    .footerspan {
+        left: 43%;
+        position: absolute;
+        bottom: 20px;
+
     }
     
     .socials {
         position: absolute;
         right: 10px;
-        bottom: -25px;
+        bottom: 20px;
     }
     
     #github img {
-        height: 30px;
+        height: 20px;
     }
     
+    #github {
+        margin-right: 20px;
+    }
+
+    #figma {
+        margin-right: 20px;
+
+    }
     #figma img {
-        height: 50px;
+        height: 18px;
     }
     
     #return-to-top {

@@ -180,7 +180,12 @@
     
     
   }
-  
+  .option {
+    position: absolute;
+    /* left: 45%; */
+    margin: 0 auto !important;
+    text-align: center;
+  }
   .el-input__inner {
     background-color: transparent !important;
     border-radius: 20px;

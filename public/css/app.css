@@ -10981,11 +10981,6 @@ html body .navbar-expand-md .navbar-nav .nav-link {
 html body .card {
   background-color: transparent !important;
   margin: 0 auto !important;
-  z-index: -1;
-}
-
-html body #current-user {
-  color: #fff !important;
 }
 
 html body #dropdown-arrow a {
@@ -11240,7 +11235,6 @@ html .create_lesson:hover {
 
 .forms .card-body {
   margin-top: 20%;
-  z-index: -1;
 }
 
 .forms .center {
