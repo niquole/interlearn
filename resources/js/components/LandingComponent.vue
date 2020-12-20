@@ -26,8 +26,7 @@
         
     </div>
 </template>
-<style scoped>
-</style>
+
 <style>
     .teacher {
         color: #fff;
@@ -67,7 +66,7 @@
         border-radius: 25px;
         width: 70vw;
         margin: 0 auto;
-        margin-top: 220px;
+        margin-top: 10%;
         border: 2px solid #599fa5;
     }
     

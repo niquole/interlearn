@@ -11105,6 +11105,15 @@ html .create_lesson:hover {
     position: absolute;
     left: 70px;
   }
+
+  body .footer {
+    position: relative;
+  }
+
+  body .footerspan {
+    position: absolute;
+    left: 45%;
+  }
 }
 
 @media (max-width: 700px) {
